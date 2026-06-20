@@ -23,10 +23,23 @@ def insert_data(df, table_name, conn):
 
     conn.commit()
     cursor.close()
+def clear_tables(conn):
+    cursor = conn.cursor()
 
+    cursor.execute("TRUNCATE TABLE appointments_features")
+    cursor.execute("TRUNCATE TABLE doctors")
+    cursor.execute("TRUNCATE TABLE departments")
+    cursor.execute("TRUNCATE TABLE patients")
+
+    conn.commit()
+    cursor.close()
+
+    print("Old data cleared")
 def main():
 
     conn = get_connection()
+    clear_tables(conn)
+
 
     # Load datasets
     patients = pd.read_csv("data/clean/patients.csv")

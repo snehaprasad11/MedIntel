@@ -1,0 +1,2 @@
+appointment_id,patient_id,doctor_id,department_id,appointment_date,arrival_time,consultation_time
+100000,59420,232,24,2022-03-28,2022-03-28 12:40:00,2022-03-28 14:20:00
