@@ -96,35 +96,35 @@ def main():
         [8,9,10,11,12,13,14,15,16,17],
         weights=[15,15,15,15,10,8,8,6,4,4]
     )[0]
-    arrival_minute = random.randint(0,59)
-    arrival_time = datetime(
-    appointment_date.year,
-    appointment_date.month,
-    appointment_date.day,
-    arrival_hour,
-    arrival_minute
-)
-    wait_minutes = random.randint(5,120)
-    consultation_time = (
-    arrival_time +
-    timedelta(minutes=wait_minutes)
-)
-    appointments.append({
+        arrival_minute = random.randint(0,59)
+        arrival_time = datetime(
+        appointment_date.year,
+        appointment_date.month,
+        appointment_date.day,
+        arrival_hour,
+        arrival_minute
+    )
+        wait_minutes = random.randint(5,120)
+        consultation_time = (
+        arrival_time +
+        timedelta(minutes=wait_minutes)
+    )
+        appointments.append({
 
-    "appointment_id": appointment_id,
+        "appointment_id": appointment_id,
 
-    "patient_id": patient_id,
+        "patient_id": patient_id,
 
-    "doctor_id": doctor_id,
+        "doctor_id": doctor_id,
 
-    "department_id": department_id,
+        "department_id": department_id,
 
-    "appointment_date": appointment_date.date(),
+        "appointment_date": appointment_date.date(),
 
-    "arrival_time": arrival_time,
+        "arrival_time": arrival_time,
 
-    "consultation_time": consultation_time
-})
+        "consultation_time": consultation_time
+    })
     appointments_df = pd.DataFrame(
     appointments
 )
