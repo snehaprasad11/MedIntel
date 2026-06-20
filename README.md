@@ -80,3 +80,101 @@ Week 6 — Forecasting
 Week 7 — AI Insights
 
 Week 8 — Deployment + Case Study
+
+---
+
+## Architecture
+
+MedIntel follows a layered analytics architecture:
+
+Synthetic Hospital Data
+
+↓
+
+ETL Pipeline
+
+↓
+
+MySQL Data Warehouse
+
+↓
+
+Analytics Engine
+
+↓
+
+Forecasting Engine + AI Insights Engine
+
+↓
+
+Executive Dashboard
+
+Architecture diagram will be added in later development stages.
+
+---
+
+## Data Model
+
+### Star Schema
+
+The analytics layer uses a star schema design to simplify KPI calculations and reporting.
+
+Components:
+
+* fact_patient_visits
+* dim_patient
+* dim_doctor
+* dim_department
+* dim_date
+
+Star schema diagram will be added in later development stages.
+
+### ER Diagram
+
+The operational database includes:
+
+* Patients
+* Doctors
+* Departments
+* Appointments
+* Admissions
+* Beds
+* LabTests
+
+ER diagram will be added in later development stages.
+
+---
+
+## Project Structure
+
+medintel/
+
+README.md
+
+docs/
+├── BRD.md
+├── KPIFramework.md
+├── Architecture.md
+├── DatabaseDesign.md
+├── diagrams/
+└── images/
+
+sql/
+├── schema/
+├── views/
+└── queries/
+
+data/
+├── raw/
+├── processed/
+└── synthetic/
+
+etl/
+analytics/
+dashboard/
+ml_models/
+ai_insights/
+tests/
+notebooks/
+```
+
