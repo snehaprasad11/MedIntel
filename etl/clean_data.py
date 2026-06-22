@@ -17,6 +17,88 @@ def clean_patients():
     df.to_csv("data/clean/patients.csv", index=False)
     print("Patients cleaned")
 
+def clean_beds():
+    df = pd.read_csv("data/synthetic/beds.csv")
+
+    df = df.drop_duplicates()
+
+    df = df[
+        (df["total_beds"] > 0)
+    ]
+
+    df = df[
+        (df["occupied_beds"] >= 0)
+        &
+        (df["occupied_beds"] <= df["total_beds"])
+        &
+        (df["occupied_icu_beds"] >= 0)
+        &
+        (df["occupied_icu_beds"] <= df["icu_beds"])
+    ]
+
+    df.to_csv(
+        "data/clean/beds.csv",
+        index=False
+    )
+
+    print("Beds cleaned")
+
+def clean_staff():
+
+    df = pd.read_csv("data/synthetic/staff.csv")
+
+    df = df.drop_duplicates()
+
+    df = df[
+        (df["doctors_scheduled"] > 0)
+        &
+        (df["nurses_scheduled"] > 0)
+        &
+        (df["support_staff_scheduled"] > 0)
+    ]
+
+    df = df[
+        (df["doctors_present"] <= df["doctors_scheduled"])
+        &
+        (df["nurses_present"] <= df["nurses_scheduled"])
+        &
+        (
+            df["support_staff_present"]
+            <=
+            df["support_staff_scheduled"]
+        )
+    ]
+
+    df.to_csv(
+        "data/clean/staff.csv",
+        index=False
+    )
+
+    print("Staff cleaned")
+
+def clean_equipment():
+
+    df = pd.read_csv("data/synthetic/equipment.csv")
+
+    df = df.drop_duplicates()
+
+    df = df[
+        (df["total_units"] > 0)
+    ]
+
+    df = df[
+        (df["units_in_use"] >= 0)
+        &
+        (df["units_in_use"] <= df["total_units"])
+    ]
+
+    df.to_csv(
+        "data/clean/equipment.csv",
+        index=False
+    )
+
+    print("Equipment cleaned")
+
 def clean_doctors():
     df = pd.read_csv("data/synthetic/doctors.csv")
 
@@ -69,6 +151,9 @@ def main():
     clean_doctors()
     clean_departments()
     clean_appointments()
+    clean_beds()
+    clean_staff()
+    clean_equipment()
 
     print("All datasets cleaned successfully")
 
