@@ -36,10 +36,8 @@ def clean_beds():
         (df["occupied_icu_beds"] <= df["icu_beds"])
     ]
 
-    df.to_csv(
-        "data/clean/beds.csv",
-        index=False
-    )
+    df.to_csv("data/clean/beds.csv",
+        index=False)
 
     print("Beds cleaned")
 
