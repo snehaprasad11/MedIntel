@@ -1,22 +1,31 @@
 from recommendation_engine import generate_recommendation
+import os
 
 
 def generate_llm_insight(metrics):
     """
     Simulated LLM response layer.
 
-    Later this can be replaced with:
+    Future:
     - OpenAI GPT
     - Gemini
     - Claude
     """
 
+    use_openai = os.getenv("USE_OPENAI", "False").lower() == "true"
+
     recommendation = generate_recommendation(metrics)
 
-    summary = (
-        "Operational demand exceeded normal capacity. "
-        "Several KPIs indicate rising pressure on hospital resources."
-    )
+    if use_openai:
+        summary = (
+            "OpenAI integration placeholder. "
+            "Replace with actual API call when API access is enabled."
+        )
+    else:
+        summary = (
+            "Operational demand exceeded normal capacity. "
+            "Several KPIs indicate rising pressure on hospital resources."
+        )
 
     return {
         "executive_summary": summary,
