@@ -1,501 +1,501 @@
 doctor_id,doctor_name,specialty,department_id
-1,Sarah Crawford,General Medicine,16
-2,Allison Anderson,Neurology,17
-3,Kristen Stein,Radiology,7
-4,Mitchell Salazar,Orthopedics,35
-5,Clarence Schmidt,Dermatology,14
-6,James Hubbard,Radiology,48
-7,Anne Scott,Cardiology,19
-8,Sarah Yoder,Pediatrics,37
-9,Douglas Jackson,Oncology,3
-10,Katie Carpenter,General Medicine,17
-11,Michael Robbins,ENT,35
-12,Jonathan Charles,Pediatrics,7
-13,Mark Trujillo,Orthopedics,23
-14,Ashley Miller,Dermatology,46
-15,Chelsea Hahn,Neurology,1
-16,David Vazquez,Cardiology,16
-17,Edward Jimenez,Cardiology,9
-18,Taylor Choi,Oncology,4
-19,Diane Holt,Pediatrics,9
-20,Joshua Colon,Neurology,13
-21,Paul Henry,Neurology,18
-22,Teresa Bailey,Neurology,44
-23,Jessica Jones,Neurology,48
-24,Arthur Richardson,Neurology,40
-25,Amanda Shelton,Neurology,9
-26,Lisa Hall,Oncology,43
-27,Todd Lopez,Radiology,31
-28,Aaron Scott,Dermatology,20
-29,Ralph Stone,Orthopedics,32
-30,James Medina,General Medicine,20
-31,Tammy Fuentes,ENT,25
-32,Kayla Sullivan DVM,Emergency,31
-33,Angela Reid,Dermatology,23
-34,Edwin Welch,Orthopedics,49
-35,Peter Powell,Orthopedics,39
-36,Kristin Medina,Pediatrics,50
-37,Todd Gibson,Orthopedics,2
-38,Valerie Bradford,Cardiology,12
-39,Kylie Baker,Dermatology,12
-40,Joseph Russell,ENT,3
-41,William Brown,Radiology,48
-42,Shawn Phillips,Dermatology,30
-43,Allison Mayer,ENT,35
-44,Clinton Moreno,Neurology,5
-45,Mallory Stevens,Pediatrics,5
-46,Sarah Wood,Oncology,11
-47,Amy Shepherd,General Medicine,34
-48,Andrew Roberts Jr.,Orthopedics,27
-49,Katherine Norman,Radiology,9
-50,Sharon Jones,General Medicine,11
-51,Stephanie Baxter,Neurology,20
-52,Jared Mendoza,ENT,47
-53,Judy Stone,Radiology,8
-54,Todd Elliott,Cardiology,22
-55,James Martinez,Dermatology,30
-56,Megan Cruz,Dermatology,10
-57,Cheryl Beck,Orthopedics,3
-58,Michael Pitts,Dermatology,21
-59,Laura Smith,Pediatrics,2
-60,Ashley Daniels,Pediatrics,8
-61,Carrie Gutierrez,Radiology,35
-62,Yolanda Rodriguez,General Medicine,8
-63,Angela Moreno,Radiology,14
-64,Ryan Martin,Neurology,27
-65,Joseph Stout,Neurology,24
-66,Patricia Nelson,Pediatrics,11
-67,Debra Mcintosh,Neurology,13
-68,Mary Maynard,General Medicine,12
-69,Tracy Marshall,Orthopedics,26
-70,Amanda Scott,Pediatrics,37
-71,John Smith,Neurology,26
-72,Edward Orozco,Orthopedics,46
-73,Brian Moore,Pediatrics,38
-74,Eric Johnson,Emergency,8
-75,Jennifer Smith,ENT,13
-76,Dr. Mario White,Orthopedics,27
-77,Thomas Osborn,Emergency,18
-78,Mary Thompson DDS,Emergency,46
-79,Christopher Carpenter,General Medicine,48
-80,Emily Freeman,Radiology,36
-81,Joseph Johnston,Radiology,3
-82,Mr. Keith Fischer,ENT,31
-83,Edward Hampton,Emergency,18
-84,Joseph Gallegos,Dermatology,24
-85,Vincent Gonzalez,Dermatology,26
-86,Ashley Booker,Neurology,2
-87,Mrs. Tara Jackson,Oncology,7
-88,Brandi Leblanc,Cardiology,24
-89,Jacob Thomas,Neurology,42
-90,Kenneth Smith,Orthopedics,31
-91,Terry Howard,Neurology,44
-92,Michelle Peterson,Radiology,44
-93,Ralph Harmon,General Medicine,2
-94,Erica Thompson,Orthopedics,22
-95,Michael Taylor,Orthopedics,28
-96,Alyssa Calderon,Emergency,24
-97,Douglas Frazier,Orthopedics,5
-98,Louis Watson,Neurology,45
-99,Pamela Cruz,ENT,41
-100,Rachel Barnett,Oncology,7
-101,Charles Atkins,General Medicine,32
-102,Darryl Callahan,Oncology,19
-103,Nicole Smith,Cardiology,29
-104,Chad Ryan,Oncology,27
-105,Debra Larson,Neurology,48
-106,Christopher Clark,Dermatology,38
-107,Jacqueline Reyes,Neurology,17
-108,Frank Forbes,Pediatrics,2
-109,Christopher Schroeder,ENT,11
-110,Dillon Jordan,Dermatology,41
-111,Jeffrey Taylor,General Medicine,47
-112,Katherine Terry,Neurology,32
-113,Dr. Leslie Heath,Oncology,37
-114,Stephanie Bowman,Emergency,40
-115,Nicholas Green,Dermatology,16
-116,Corey Miller,Radiology,13
-117,Erin Martinez,Dermatology,32
-118,Dennis Hughes,Radiology,14
-119,Howard Bowman,Emergency,2
-120,Leslie Byrd,ENT,19
-121,Richard Navarro,Cardiology,21
-122,Brandon Gonzalez,ENT,32
-123,Kathy Donovan,Cardiology,14
-124,Laura Alexander,Emergency,10
-125,Melissa Martin,Emergency,18
-126,Michelle Reed,General Medicine,21
-127,Kenneth Miller,Neurology,37
-128,Mario Mcbride,General Medicine,24
-129,Julie Martin,Orthopedics,17
-130,Jessica Rivera,Radiology,15
-131,Kathryn Johnson,Neurology,29
-132,Daniel Freeman,ENT,1
-133,Travis Oconnell,ENT,50
-134,David Russell,General Medicine,36
-135,Raymond Calderon,Pediatrics,16
-136,Alexis Scott,Emergency,3
-137,Joshua Miller,Neurology,33
-138,Christy Torres,Cardiology,15
-139,Jose Benson,Emergency,20
-140,Karen Koch,Oncology,35
-141,Angela Liu,General Medicine,22
-142,Monica Lopez,Pediatrics,41
-143,Jeffrey Myers,ENT,40
-144,Derek Hill,Neurology,2
-145,Louis Davis,Pediatrics,47
-146,Olivia Hoover,Radiology,1
-147,Julie Henry,Oncology,47
-148,Gail Burnett,General Medicine,27
-149,Dylan Horton,Oncology,17
-150,Tim Thomas,Cardiology,1
-151,Joshua Henderson,Dermatology,11
-152,Lisa Garcia,Orthopedics,28
-153,Karen Herman,Oncology,33
-154,Madison Bartlett,Cardiology,24
-155,Andrew Wilson,General Medicine,22
-156,Devon Wilson,Cardiology,46
-157,Deborah Gordon,Radiology,49
-158,Dustin Silva,ENT,33
-159,Cody Jordan,Neurology,26
-160,Ashley Moore,Pediatrics,22
-161,Christopher Humphrey Jr.,Dermatology,26
-162,Miss Destiny Barnes MD,ENT,9
-163,Brian Daniels,Oncology,40
-164,Matthew Mathews,Cardiology,41
-165,Chelsey Garcia,Radiology,34
-166,Robyn Holloway,Oncology,18
-167,Jeff Garrison,Cardiology,24
-168,Dr. James Scott,Dermatology,7
-169,Brian Miller,ENT,14
-170,Sean Hanna,Dermatology,12
-171,Denise Sloan,ENT,22
-172,Edward Rodriguez,Pediatrics,20
-173,Matthew Sherman,Dermatology,46
-174,William Johnson,Emergency,24
-175,Joseph Wilson,Oncology,49
-176,Mary Blackwell,Oncology,38
-177,Sarah Ayala,Oncology,36
-178,Nichole Daugherty,Neurology,45
-179,Katie Richard,ENT,28
-180,Joseph Summers,Neurology,16
-181,Gabrielle Calhoun,General Medicine,1
-182,Sandra Cox,Oncology,33
-183,Billy Hall,Oncology,20
-184,Robert Harris,Oncology,19
-185,John Thompson,Dermatology,4
-186,Jennifer Watkins,ENT,1
-187,Sheena Ingram,Radiology,37
-188,Nicole Henderson,Dermatology,32
-189,Heather Weber MD,ENT,43
-190,Seth Cannon,Orthopedics,8
-191,Debbie Schneider,Oncology,16
-192,Lee Valdez,Orthopedics,14
-193,Martin Pearson,General Medicine,21
-194,Elizabeth Lee,Orthopedics,1
-195,Wendy Obrien,Oncology,11
-196,Nancy Sandoval,Radiology,17
-197,Debra Lopez,Pediatrics,9
-198,Daniel Waters,Orthopedics,38
-199,Shawn Yates Jr.,General Medicine,10
-200,Cassie Hernandez,Dermatology,21
-201,Gregory Pennington,Neurology,30
-202,Andrea Gonzalez,Emergency,8
-203,Jessica Jones,Orthopedics,31
-204,Monica Henry,Cardiology,49
-205,Linda Fischer,Neurology,37
-206,Mr. Thomas Johnson,Neurology,29
-207,Jeremy Rodriguez,Oncology,26
-208,Timothy Daniels,Pediatrics,44
-209,Steven Ramos,Orthopedics,27
-210,Ralph Sanford,ENT,34
-211,Allison Walton,Neurology,39
-212,Nicholas Bradley,Emergency,9
-213,Jeffery Carlson MD,Radiology,5
-214,Henry Decker,Radiology,11
-215,Nicole Jenkins,Emergency,6
-216,Jacob Cabrera,Cardiology,1
-217,Maria Gamble,Emergency,17
-218,Michael Howard,Dermatology,33
-219,Ronald Moran,Neurology,43
-220,Brandon Holt,Neurology,38
-221,Savannah Thomas,Cardiology,34
-222,Natasha Clarke,ENT,26
-223,Christopher Griffin,Emergency,21
-224,Noah Scott,Orthopedics,6
-225,Gary Jennings,Oncology,27
-226,Eric Kelly,Oncology,20
-227,Alyssa Jones,General Medicine,32
-228,Tonya Rodriguez,ENT,42
-229,James Thomas,Dermatology,6
-230,Mr. Alec Wilson,Emergency,25
-231,Mark Bennett,ENT,2
-232,Diana Ingram,Cardiology,19
-233,Jeff Jones,Oncology,43
-234,Todd Ramos,ENT,24
-235,Monica Dunn,Orthopedics,31
-236,Daniel Jones,Cardiology,49
-237,Barbara Carter,Orthopedics,10
-238,Donald Morgan,Orthopedics,5
-239,Amy Fitzpatrick,Neurology,7
-240,Lori Pineda,Pediatrics,49
-241,Mallory Santiago,Neurology,15
-242,Diana Solomon,Radiology,23
-243,Kelsey Hamilton,Emergency,2
-244,Leonard Rojas,General Medicine,3
-245,Brenda Reyes,General Medicine,3
-246,Amanda Mitchell,Oncology,44
-247,Cynthia Gordon,Oncology,42
-248,Arthur Lambert,Oncology,23
-249,David Stephens,Pediatrics,12
-250,Paul Moore,Cardiology,27
-251,Jesse Sanders,Oncology,16
-252,Travis Quinn,Emergency,31
-253,Katelyn Matthews,Orthopedics,44
-254,Ricky Gomez,Radiology,28
-255,Tanya Hull,Radiology,45
-256,Joseph Garcia,Cardiology,29
-257,Shane Anderson,Cardiology,15
-258,Dr. Christopher Tucker,Orthopedics,26
-259,Heather Martinez,General Medicine,19
-260,Roger Perry,Emergency,38
-261,Jeffrey Owens,ENT,29
-262,Amy Boyer,Emergency,17
-263,Kevin Scott,Oncology,47
-264,Jamie Pope,Radiology,5
-265,Shannon Jones,Cardiology,28
-266,Andrea Martinez,Pediatrics,18
-267,Jennifer Martin,Dermatology,27
-268,Shannon Wade,Oncology,37
-269,Tamara James,ENT,10
-270,Patricia Tran,Orthopedics,17
-271,Robert Clark,Cardiology,13
-272,Bianca Vargas,Pediatrics,39
-273,Charlene Park,Dermatology,43
-274,Justin Freeman,Dermatology,34
-275,Melissa Anderson,Cardiology,19
-276,Jeffrey Mcdaniel,Cardiology,43
-277,James Haynes,General Medicine,21
-278,Amanda Jensen,Neurology,43
-279,Sabrina Mitchell,Orthopedics,40
-280,Alan Montgomery,Emergency,15
-281,Ashlee Mcclure,General Medicine,11
-282,Donald White,Orthopedics,36
-283,Martin Webster,Emergency,46
-284,Melanie Griffin,General Medicine,43
-285,Victoria Diaz,Dermatology,33
-286,Veronica Barnes,Pediatrics,43
-287,Nicholas Andersen,General Medicine,18
-288,Jennifer Taylor,Cardiology,4
-289,Martha Robbins,Emergency,5
-290,Joann Jones,Orthopedics,45
-291,Brandon James,Neurology,26
-292,Amy Woodward,Neurology,29
-293,Robert Bryan,Emergency,43
-294,George Barr,Orthopedics,32
-295,Keith Luna,Cardiology,7
-296,Troy Silva,Cardiology,23
-297,Linda Vasquez,Cardiology,21
-298,Kevin Jones,Dermatology,27
-299,Erika Henry,Neurology,44
-300,Angel Becker,Cardiology,28
-301,Louis Valenzuela,Emergency,21
-302,Derek Kelly,General Medicine,22
-303,Wendy Stephens,Cardiology,1
-304,Jeffery Webster,Neurology,25
-305,Lisa Fitzpatrick,Emergency,50
-306,April Estrada,Orthopedics,38
-307,Kathy Thomas,General Medicine,10
-308,Michelle Howard,Dermatology,42
-309,Rebekah Scott,Radiology,30
-310,Michael Harris,General Medicine,3
-311,Joshua Collins,Radiology,25
-312,Bianca Huber,Pediatrics,38
-313,Stacy Stuart,Dermatology,19
-314,Brian Berger,General Medicine,25
-315,Katie Campbell,Radiology,34
-316,Catherine Gonzalez,Pediatrics,16
-317,Trevor Vincent,Pediatrics,7
-318,Andrea Madden,Neurology,10
-319,Robert Carson,Orthopedics,34
-320,Jessica Smith,Cardiology,36
-321,Elizabeth Dougherty,Pediatrics,33
-322,Brett Hunter,Emergency,14
-323,Samuel Fischer,Cardiology,35
-324,Cassandra Cooper,Dermatology,40
-325,Marie Kelly MD,Oncology,42
-326,Matthew Mejia,ENT,30
-327,Rebecca Griffith,Oncology,17
-328,William Dyer,Cardiology,12
-329,Kevin Dawson,Emergency,18
-330,Daniel Flores,Emergency,13
-331,Joseph Jimenez,Radiology,6
-332,Stephanie Green,Neurology,24
-333,Mark Larsen,ENT,16
-334,Derrick Miller,Orthopedics,24
-335,Lynn Bates,ENT,35
-336,Stephanie Anderson,Oncology,4
-337,Kristine Franklin,ENT,49
-338,Joseph Rivera,Pediatrics,7
-339,Alexandra Davis,ENT,34
-340,Matthew Curtis,Emergency,15
-341,Raymond Barker,Emergency,17
-342,Kimberly Crosby DVM,ENT,46
-343,Edward Garcia,Pediatrics,2
-344,Allison Clark,Oncology,8
-345,Lucas Yates,Emergency,8
-346,Mark Marsh,Dermatology,8
-347,Christopher White,Cardiology,37
-348,Benjamin Friedman,Orthopedics,33
-349,Daniel Campbell,Emergency,28
-350,Andrew Cervantes,Neurology,42
-351,James Mitchell,Pediatrics,14
-352,Mr. Jason Fitzgerald,Dermatology,25
-353,Jeff King,Oncology,17
-354,Carmen Mejia,ENT,11
-355,James Chase,Pediatrics,5
-356,Jennifer Miller,ENT,6
-357,Chris Valentine,ENT,37
-358,Richard Rush,Dermatology,5
-359,Janet Carter,Pediatrics,46
-360,Connie Bailey,ENT,23
-361,Ray Johnson,Emergency,38
-362,Zachary Spencer,Dermatology,28
-363,Michele Dean,Pediatrics,29
-364,Andrew Collins,Oncology,36
-365,Travis Davis,Emergency,18
-366,Mark Faulkner,Neurology,37
-367,Kenneth Perez,ENT,10
-368,Savannah Barrera,Pediatrics,6
-369,Kenneth Moore,Pediatrics,20
-370,Caroline Little,Oncology,34
-371,Sergio Barnett Jr.,Neurology,12
-372,Erica Brown,Cardiology,37
-373,William Gonzalez,Emergency,30
-374,Trevor Young,Oncology,10
-375,James Madden,Cardiology,48
-376,Courtney Myers,Oncology,50
-377,Angelica Turner,Oncology,27
-378,Bruce Montoya,Dermatology,30
-379,Linda Fleming,ENT,46
-380,Glenda Stephens,Radiology,39
-381,Elijah Sloan,Oncology,37
-382,Gwendolyn Petty,Radiology,18
-383,Jeremy Newton,General Medicine,37
-384,Katherine Walls,Dermatology,38
-385,Phillip Caldwell,Neurology,19
-386,Samantha Compton,Radiology,42
-387,Jessica Jones,Pediatrics,36
-388,Bryce Franklin,Neurology,7
-389,William Hill,ENT,39
-390,Priscilla Lee,General Medicine,48
-391,Jeff Gutierrez,Orthopedics,3
-392,Clinton Alvarez,Dermatology,3
-393,Natalie Randolph,Orthopedics,48
-394,Jennifer Davis,Oncology,1
-395,Marissa Jordan,Oncology,31
-396,Kevin Patel,Dermatology,49
-397,James Carlson,Orthopedics,45
-398,Susan Butler,ENT,3
-399,Ruth Chase,Radiology,25
-400,Kimberly Johnson,Emergency,32
-401,Colleen Thompson,Radiology,6
-402,Tammy Brown,Oncology,43
-403,Cindy Ramos,Emergency,13
-404,Louis Perez,General Medicine,40
-405,Beth Murphy,Cardiology,41
-406,Penny Pitts,Neurology,34
-407,Shawn Hernandez,Pediatrics,44
-408,Rebecca Huff,Emergency,16
-409,Heather Tran,Neurology,7
-410,Emily Bullock,Emergency,3
-411,Samuel Hayes,ENT,17
-412,Shannon Ferrell,Neurology,19
-413,Natalie Clark,ENT,31
-414,Sarah Welch,Pediatrics,40
-415,William Owens,Orthopedics,29
-416,Jennifer Cochran,General Medicine,10
-417,Susan Roberts,General Medicine,13
-418,Dawn Woodard,Oncology,10
-419,Robert Gamble,Pediatrics,16
-420,Gabriela Cummings,Oncology,15
-421,Miguel Giles DVM,Pediatrics,37
-422,Dylan Hill,Radiology,45
-423,Darin Preston,Neurology,22
-424,James Griffith,General Medicine,48
-425,Megan King,Cardiology,21
-426,Paul Powers,Dermatology,30
-427,Kimberly Young,Neurology,12
-428,Christine Wilson,Orthopedics,4
-429,Kayla Brown,Dermatology,34
-430,Dr. Brooke Dennis,Neurology,33
-431,Rachel Anderson,Radiology,42
-432,Scott Schmidt,Cardiology,40
-433,Lisa Jones,Emergency,47
-434,Alexandra Brown,Oncology,17
-435,Paul Hammond,Dermatology,42
-436,Laurie Jones,Orthopedics,4
-437,Cameron Gillespie,Emergency,32
-438,Jonathan Williams,Orthopedics,21
-439,Brittany Watkins,Orthopedics,21
-440,Lori Aguilar,Dermatology,42
-441,Maria Gross,General Medicine,50
-442,Amanda Mcdonald,Orthopedics,33
-443,Tami Cantrell,Dermatology,15
-444,Garrett Hernandez,Neurology,47
-445,Tonya Sims,General Medicine,25
-446,Mark Weaver,Radiology,21
-447,Melanie Barton,General Medicine,42
-448,Debbie Brandt,Cardiology,38
-449,Stephanie Perez,Pediatrics,43
-450,Brandon Clark,Dermatology,32
-451,Sean Terrell,Pediatrics,45
-452,Samuel Walsh,Radiology,20
-453,Melinda Burton,Emergency,1
-454,Carlos Reid,Cardiology,21
-455,Timothy Woods,ENT,21
-456,Ashley Padilla,Dermatology,22
-457,James Wright,General Medicine,37
-458,Brad Watson,Orthopedics,29
-459,Krista Estrada,Dermatology,5
-460,Joseph Burns,Emergency,19
-461,Kristy Weaver,ENT,20
-462,Autumn Jimenez,Orthopedics,48
-463,Brandy Davis,Orthopedics,8
-464,Erica Weaver,General Medicine,32
-465,Julie Meza,Pediatrics,14
-466,Gregory Martinez,Oncology,15
-467,Matthew Cross,Orthopedics,31
-468,Michael White,Dermatology,33
-469,Dean White,Neurology,33
-470,Steven Walker,ENT,7
-471,Eric Zimmerman,General Medicine,7
-472,Marilyn Lawrence,Orthopedics,40
-473,Kimberly Richardson,Cardiology,33
-474,Megan Perkins,Emergency,12
-475,Russell Hill,Emergency,31
-476,Nicholas Brewer,Radiology,39
-477,Brian Powers,Radiology,17
-478,James Lopez,Cardiology,47
-479,Benjamin Estes,Emergency,13
-480,Jason Reid,Oncology,38
-481,Arthur Boyd,Radiology,49
-482,Marco Gomez,ENT,3
-483,Sheila Hunt,General Medicine,6
-484,Perry Smith,Orthopedics,5
-485,Jillian Walters,Orthopedics,34
-486,Heather Price,Dermatology,37
-487,Annette Munoz,Oncology,2
-488,Raymond Cox,Dermatology,17
-489,Katrina Bradford,Pediatrics,10
-490,Kristin Robinson,Oncology,31
-491,Laura Banks,Neurology,48
-492,Billy Chase MD,Dermatology,20
-493,Jeremy Meyer,Radiology,15
-494,Steven Ramirez,Emergency,37
-495,Crystal Walsh,Oncology,47
-496,Gerald Davenport,Pediatrics,7
-497,Sean Castro,Oncology,46
-498,Jeffrey Vega,Oncology,34
-499,Claudia Klein,Neurology,19
-500,Joanne Anderson,Dermatology,15
+1,Ryan Smith,Cardiology,30
+2,Brianna Alexander,Pediatrics,33
+3,Alan Kennedy,Emergency,11
+4,John Beck,Radiology,38
+5,Tamara Cervantes,Radiology,48
+6,Gerald Martin,Emergency,8
+7,Renee Garza,General Medicine,40
+8,Krista Miller MD,Cardiology,30
+9,Mr. Troy Crawford Jr.,Neurology,34
+10,Samantha Gutierrez,Cardiology,32
+11,Sonya Buchanan,ENT,17
+12,Kimberly Garrett,Orthopedics,3
+13,Patrick Mills,Dermatology,20
+14,Anthony Mason,ENT,27
+15,Amber Weber,Neurology,40
+16,Darlene Hall,Orthopedics,46
+17,Shannon Riggs,Dermatology,22
+18,Paul Clark,ENT,50
+19,Eric Vaughn,Oncology,47
+20,Jennifer Wallace,Pediatrics,10
+21,Jeffrey Williams,Cardiology,24
+22,Kevin Williams,Orthopedics,25
+23,Kathleen Reynolds,ENT,33
+24,Matthew Aguilar,Pediatrics,6
+25,Megan Moore,Cardiology,21
+26,Tami Perkins,Pediatrics,3
+27,James Davila,Emergency,34
+28,Melissa Obrien,ENT,42
+29,Kimberly Sanchez,Radiology,44
+30,Tonya Schultz,Dermatology,46
+31,Susan Berry,General Medicine,49
+32,Scott Johnson,Cardiology,39
+33,Julia Williams,Oncology,12
+34,Traci Castillo,Radiology,45
+35,Briana House,General Medicine,19
+36,Jon Stone,Oncology,21
+37,Amy Johnson,ENT,27
+38,Scott Santiago,Cardiology,28
+39,Todd Lynch,Orthopedics,7
+40,Tracy Porter,Pediatrics,48
+41,Jessica Bird,Orthopedics,7
+42,Steven Perez,Dermatology,8
+43,William Stephens,ENT,9
+44,Anita Cunningham,Orthopedics,7
+45,Derrick Harrell,Oncology,33
+46,Katie Johnson,Oncology,29
+47,Brianna Johnson,Orthopedics,46
+48,Benjamin Williams,Oncology,35
+49,Emily Torres,Pediatrics,26
+50,Karla Evans,General Medicine,16
+51,Thomas Vargas,Emergency,5
+52,Gregory Sloan,Orthopedics,26
+53,Kayla Hickman,Orthopedics,1
+54,Tina Fuentes DDS,Emergency,33
+55,Sara Kim,Pediatrics,40
+56,Joseph Henderson,Neurology,25
+57,Veronica Francis,Cardiology,19
+58,Martha Chavez,Cardiology,33
+59,Michael Simpson,Pediatrics,26
+60,Jessica Williamson,Pediatrics,26
+61,Traci Hammond,Radiology,23
+62,Edwin Garcia,Radiology,46
+63,Brandon Wilson,Radiology,15
+64,Robert Molina,Orthopedics,15
+65,Tara Scott,Dermatology,3
+66,Kylie Gonzalez,General Medicine,46
+67,Sara Thomas,General Medicine,32
+68,Kayla Sandoval,Radiology,40
+69,Juan Brown,Emergency,21
+70,Mark Ortiz,Radiology,7
+71,Zoe Wilson,Dermatology,47
+72,Hector Peters,Radiology,12
+73,Mitchell Watts,General Medicine,5
+74,Carolyn Durham,Radiology,23
+75,Joann Lee DVM,Orthopedics,2
+76,Bryan Owens,ENT,40
+77,Thomas Maxwell,Emergency,20
+78,Robert Klein,Dermatology,31
+79,Jonathan Phillips,ENT,7
+80,Kimberly Taylor,General Medicine,23
+81,Shelley Yates,Emergency,24
+82,Joseph Nichols,Cardiology,40
+83,John Jenkins,Emergency,50
+84,Gina Walter,Radiology,44
+85,Jacob Villarreal,ENT,4
+86,Drew Garcia,Orthopedics,44
+87,John Waller,ENT,26
+88,Nicole Galvan,General Medicine,19
+89,Brent Guzman,Radiology,26
+90,Natasha Williams,General Medicine,29
+91,Sheryl Todd,Orthopedics,4
+92,Shannon Roman,General Medicine,16
+93,Rachel Nguyen,Emergency,48
+94,Joel Barnes,Orthopedics,20
+95,John Smith,ENT,28
+96,George Arnold,Cardiology,24
+97,Keith Black,Cardiology,48
+98,John Valdez,Oncology,7
+99,Diane Williams,Orthopedics,27
+100,Timothy Taylor,Pediatrics,32
+101,Lacey Jones,ENT,27
+102,Julie Wilcox,Dermatology,45
+103,Adam Haynes,ENT,17
+104,Natalie Caldwell,Pediatrics,26
+105,Jeffrey Matthews,Pediatrics,45
+106,Melissa Dixon,Emergency,1
+107,Adam Manning,Radiology,10
+108,Andrew Guzman,Pediatrics,2
+109,John Campbell,Cardiology,44
+110,Ronald Torres,Radiology,48
+111,Nichole Parker,Emergency,32
+112,James Sandoval,Orthopedics,32
+113,Julia Patterson,Neurology,31
+114,Louis Booker,Neurology,49
+115,Jasmine White,Neurology,11
+116,Beverly Wright,General Medicine,47
+117,Dalton Roach,Dermatology,4
+118,Laura Kent,Radiology,6
+119,Jay Shields,Pediatrics,14
+120,Stephanie Peterson,Emergency,46
+121,Tracy Yang,Emergency,4
+122,William May,Radiology,37
+123,Jason Johnson,Pediatrics,43
+124,Dave Ellison,Emergency,7
+125,Ryan Warren,Neurology,49
+126,Victoria Owen,Pediatrics,15
+127,Ashley Brown,Emergency,40
+128,Richard Young,Cardiology,5
+129,Taylor Soto,Orthopedics,31
+130,Wesley Lopez,Orthopedics,42
+131,Lisa King,Orthopedics,26
+132,Daniel Sanchez,Dermatology,50
+133,Andrew Torres,Neurology,29
+134,Dorothy Miller,Orthopedics,23
+135,Melissa Hodges,Pediatrics,9
+136,Jessica Lloyd,Emergency,37
+137,Robert Hodges,General Medicine,19
+138,Gloria Patel,Pediatrics,28
+139,Lisa Silva,Emergency,37
+140,Kimberly Smith,Emergency,1
+141,Mrs. Renee Hanson,General Medicine,12
+142,Bryan Jackson,Oncology,27
+143,Robert Nguyen,General Medicine,28
+144,Michelle Washington,Oncology,50
+145,Maria Summers,Oncology,10
+146,Paul Morris,Dermatology,37
+147,Katie White,Radiology,10
+148,Dustin Brown,Oncology,13
+149,Jonathan Green,Dermatology,47
+150,Timothy Cortez,Orthopedics,41
+151,Yolanda Freeman DDS,Radiology,15
+152,Michelle Thompson,Orthopedics,26
+153,Sarah Fry,Cardiology,37
+154,Cassie Haynes,Cardiology,33
+155,Johnny Black,Dermatology,42
+156,David Smith,ENT,44
+157,Amy Kim,ENT,49
+158,Kaitlyn Charles,Orthopedics,12
+159,Richard Hill,Oncology,9
+160,Jennifer Harmon,General Medicine,39
+161,Shelia Tyler,Neurology,29
+162,Timothy Brown,Radiology,17
+163,Melinda Parker,Orthopedics,32
+164,Christopher Weber,Pediatrics,28
+165,Robert Harding,Cardiology,50
+166,Ashley Dominguez,Orthopedics,46
+167,Melinda Trevino,Cardiology,36
+168,Todd Miller,ENT,34
+169,Frank Bruce MD,Oncology,26
+170,Michelle Powers,ENT,47
+171,Jennifer Esparza,Dermatology,27
+172,Joseph Fields,Cardiology,26
+173,Ms. Lori Cherry,Neurology,9
+174,Alyssa Trujillo,Emergency,37
+175,Hannah Santana DDS,Radiology,23
+176,Michael Parker,Pediatrics,16
+177,Daniel Berry,Pediatrics,2
+178,Joshua Mullen,Cardiology,49
+179,Jennifer Roman,Orthopedics,9
+180,Donald Mueller,ENT,14
+181,Jason Bailey,Pediatrics,22
+182,Carla Garcia,General Medicine,46
+183,Daniel Sanchez,Pediatrics,15
+184,Sandra Harding,Dermatology,41
+185,George Gibson,Oncology,40
+186,April Chase,Orthopedics,28
+187,Jordan Mitchell,Neurology,28
+188,Alexander Murray,Oncology,35
+189,Yolanda Chan,Radiology,5
+190,Marissa Pena,Radiology,15
+191,Justin Banks,Radiology,49
+192,Mike Blackburn,Pediatrics,25
+193,Keith Nunez,Cardiology,10
+194,Joseph Phillips,General Medicine,6
+195,Kenneth Brown,ENT,4
+196,Brett Cole,Cardiology,2
+197,Alexis Gonzalez,Dermatology,2
+198,Stephanie Perez,Dermatology,1
+199,Henry Smith,Oncology,16
+200,Terry Thompson,Oncology,45
+201,Austin Hutchinson,Cardiology,9
+202,Sharon Shaw,Oncology,21
+203,Mr. Robert Lloyd MD,Cardiology,15
+204,Leslie White,Orthopedics,2
+205,John Harris,General Medicine,12
+206,Claudia Moore,Pediatrics,10
+207,Stephanie Gray,Emergency,36
+208,James Holmes,ENT,24
+209,Justin Santiago,Orthopedics,29
+210,Kimberly Gray,Emergency,48
+211,Leslie Flynn,Orthopedics,42
+212,Tracy Garcia,Radiology,1
+213,Alexander Harding,Cardiology,2
+214,Charlene Silva,Oncology,33
+215,Carolyn Martin,Cardiology,21
+216,Rebecca Dickson,Neurology,48
+217,Linda Miller,General Medicine,47
+218,Benjamin Hansen,Oncology,21
+219,Tiffany Hendrix,Emergency,21
+220,Kayla Jones,Oncology,38
+221,Adam Morrow,Orthopedics,29
+222,Joel Gonzalez,Orthopedics,29
+223,Morgan Abbott,ENT,40
+224,Adam Herman,Pediatrics,49
+225,Joseph Hendricks,Cardiology,30
+226,Vincent Taylor,ENT,44
+227,Derrick Gutierrez,Orthopedics,32
+228,Carolyn Rivers,Oncology,36
+229,Natasha Beltran,Emergency,48
+230,Connor Burns,Radiology,10
+231,Brenda Smith,Neurology,21
+232,Jason Stephens,General Medicine,35
+233,Katelyn Velasquez,Dermatology,28
+234,Melissa Phillips,Emergency,47
+235,Deanna Wright,Oncology,9
+236,Andrew Davis,Orthopedics,46
+237,John Charles,Radiology,16
+238,Ethan Terry,Pediatrics,2
+239,Carol Scott,Neurology,49
+240,Meghan Bates,Dermatology,37
+241,Cynthia Bell,Neurology,11
+242,Stephen Reyes,Orthopedics,4
+243,Nicole Conrad,Neurology,33
+244,Cody Murphy,Orthopedics,12
+245,Justin Bray,Orthopedics,38
+246,Paul Ramirez,General Medicine,45
+247,Steven Blake,Pediatrics,19
+248,Rachel Smith,Emergency,29
+249,Sharon Gill,Pediatrics,14
+250,Alison Lucas,General Medicine,22
+251,Daniel Simpson,Orthopedics,21
+252,Shawn Cook,General Medicine,18
+253,Kiara Horn,Neurology,32
+254,Michael Alvarez,Oncology,21
+255,Dawn Mckenzie,Pediatrics,49
+256,David Jordan,Radiology,17
+257,James Blair,Emergency,36
+258,Melanie Mccarthy,Dermatology,27
+259,Edward Riddle,Radiology,13
+260,Melody Stewart,Oncology,2
+261,Nicole Hawkins,Pediatrics,6
+262,Patrick Shepherd,Radiology,3
+263,Danielle Morgan,Radiology,25
+264,Jason Pruitt,Emergency,43
+265,Danny Garcia,ENT,48
+266,Erin Pratt,Pediatrics,36
+267,Michael Cunningham,ENT,30
+268,Pamela Koch,Orthopedics,25
+269,Karen Johnson,Orthopedics,34
+270,Charles Clark,Pediatrics,29
+271,Jillian Lee DVM,Emergency,37
+272,Ronnie Adams,Radiology,48
+273,David Goodman,Dermatology,50
+274,Gina Berry,General Medicine,32
+275,Caitlin Graham,Oncology,2
+276,Amanda Marshall,Neurology,1
+277,John Massey,Radiology,48
+278,Mitchell Baldwin,Radiology,8
+279,Robert Brown,Neurology,3
+280,Emily Smith,Radiology,25
+281,Jesse Carter,General Medicine,4
+282,Diana Robbins,General Medicine,42
+283,Heather Grant,Pediatrics,8
+284,Madison Ward,Oncology,3
+285,Tony Walker,General Medicine,45
+286,Alexandria Williams,Emergency,11
+287,Jessica Richardson,Neurology,16
+288,Sara Wilson,Oncology,15
+289,Jeffrey Wyatt,Orthopedics,19
+290,Stephanie White,Emergency,25
+291,Rachael Thompson,Pediatrics,18
+292,Sheila Morales,Neurology,16
+293,Deanna Aguilar,Dermatology,33
+294,Megan Navarro,Orthopedics,31
+295,Shari Nguyen,General Medicine,26
+296,Daniel Martin,General Medicine,40
+297,Jessica Douglas,Pediatrics,29
+298,Joshua Powell,Emergency,4
+299,Amanda Thomas,Oncology,37
+300,Monica Villarreal,ENT,47
+301,Edward Parker,Cardiology,29
+302,Andrew Maldonado,Radiology,24
+303,Michele Holland,Radiology,19
+304,Phillip Hoover,Pediatrics,1
+305,Brian Glover,ENT,16
+306,Chelsey Hunter,Oncology,44
+307,Teresa Schmidt,ENT,31
+308,Jim Smith,Emergency,13
+309,Isaiah Johnson,Cardiology,7
+310,Pamela Nelson,ENT,36
+311,Christopher Robinson,Cardiology,8
+312,Katherine Nelson,Radiology,24
+313,Danielle Davis,Orthopedics,30
+314,Eric Brown,General Medicine,4
+315,Darren Myers,Radiology,41
+316,David Hensley,Oncology,32
+317,Emma Bell,ENT,20
+318,Tyler Gonzalez,Cardiology,3
+319,Grant Jones,General Medicine,40
+320,Jamie Parks,Orthopedics,39
+321,Jennifer Wilson,Orthopedics,4
+322,Courtney White,Orthopedics,44
+323,Sean Hawkins,Neurology,29
+324,Mary Gutierrez,Pediatrics,37
+325,Raymond Green,Dermatology,15
+326,Jesse Young,Cardiology,28
+327,John Heath,General Medicine,19
+328,Edward Reynolds,Emergency,12
+329,David Martinez,Emergency,32
+330,Nancy Gaines,Pediatrics,1
+331,Jason Rodriguez,Orthopedics,10
+332,Andrea Lewis,Oncology,32
+333,Kelly Mercer,ENT,22
+334,Kathryn Turner,Dermatology,20
+335,Sharon Rodgers,Dermatology,20
+336,Richard Collins,Emergency,33
+337,William Townsend,General Medicine,35
+338,Christina Austin,Cardiology,43
+339,Carol Goodman,General Medicine,21
+340,Jeffery Pierce,Neurology,29
+341,Charles Miranda,General Medicine,27
+342,Mr. James Brown,Orthopedics,26
+343,Dawn Gomez,Orthopedics,13
+344,Christopher Evans,Cardiology,6
+345,Chase Williams,Radiology,5
+346,Tiffany Gomez,General Medicine,21
+347,Justin Tran,Radiology,31
+348,Christopher Turner,Oncology,12
+349,Yvonne Rodriguez,ENT,34
+350,Colin Dunn,General Medicine,9
+351,Michelle Franklin,Dermatology,47
+352,Kathryn Preston,Oncology,6
+353,Holly Arnold,Emergency,27
+354,Monique Sandoval,Dermatology,50
+355,Richard Ochoa,Pediatrics,33
+356,Mikayla Gardner,Cardiology,16
+357,Christopher Clark,Cardiology,6
+358,Michelle Grant,ENT,40
+359,William Fuller,Oncology,18
+360,Shannon Bennett,Orthopedics,32
+361,Michelle Marshall,Cardiology,17
+362,Matthew James,General Medicine,44
+363,Melissa Hall,Orthopedics,32
+364,Anna Stewart,Pediatrics,17
+365,James Chapman,Dermatology,22
+366,Deanna Smith,Cardiology,26
+367,Abigail Sherman,General Medicine,6
+368,Brian Dixon,Neurology,41
+369,Donna York,Dermatology,12
+370,Tamara Acosta,Cardiology,50
+371,Alison Smith,Emergency,24
+372,William Potter,Oncology,5
+373,Christina Martin,Neurology,6
+374,Traci Campbell,ENT,2
+375,Kimberly Reid,Radiology,23
+376,Lori Martin,Pediatrics,40
+377,Christopher Richard,Orthopedics,47
+378,Mr. Brandon Dean,Cardiology,18
+379,Natalie Kelly,ENT,31
+380,Mr. Anthony Stephens,Emergency,38
+381,Phillip Cooper,Neurology,2
+382,Rodney Floyd,Cardiology,30
+383,Anita Fields,Dermatology,25
+384,Laura Alvarez,Dermatology,8
+385,Christopher Mcdonald,ENT,18
+386,William Bishop,Orthopedics,39
+387,Joseph Dean,Pediatrics,33
+388,Frederick Thompson,Orthopedics,18
+389,Jon Craig,Neurology,27
+390,Michael Wagner,Dermatology,26
+391,Kevin Lee,Pediatrics,14
+392,Briana Walters,ENT,37
+393,Christopher Hill,Cardiology,12
+394,Tricia Nolan,Emergency,27
+395,Elizabeth Tucker,Orthopedics,28
+396,Douglas Baker,Cardiology,41
+397,Christopher Powell,Cardiology,17
+398,Kyle Nielsen,Pediatrics,13
+399,Barry Thompson,Pediatrics,34
+400,Connor Sherman,Cardiology,34
+401,Douglas Evans,Oncology,30
+402,Amanda Ryan,ENT,37
+403,Chad Salinas,Orthopedics,50
+404,Sylvia Cummings MD,General Medicine,8
+405,Carla Flores,General Medicine,22
+406,Victor Washington,ENT,45
+407,Kara Paul,Neurology,20
+408,Steve Kim,Dermatology,8
+409,David Brown,Orthopedics,21
+410,Amanda Larson,Oncology,20
+411,Susan Ellis,Neurology,34
+412,Amanda Gibson,Cardiology,22
+413,Allen Smith,General Medicine,38
+414,Patrick Carlson,Oncology,31
+415,Alyssa Stone DDS,ENT,5
+416,Lisa Davis,Dermatology,24
+417,Dominic Fuentes,Pediatrics,33
+418,Gabriella Martinez,Orthopedics,22
+419,Elizabeth Jenkins,Oncology,11
+420,Jonathan Fisher,Oncology,25
+421,Jacqueline Mendez,Emergency,1
+422,Harry Snyder,Cardiology,41
+423,Jose Rodriguez,Emergency,7
+424,Kristen Weiss,Cardiology,38
+425,Lori Meadows,Cardiology,8
+426,Ashley Salas,Emergency,9
+427,Michelle Taylor,Pediatrics,24
+428,Peter Wright,Cardiology,25
+429,Anthony Obrien,Orthopedics,27
+430,Jonathan Gomez,Emergency,13
+431,Erin Gray,Orthopedics,30
+432,Mr. Darrell Edwards,General Medicine,26
+433,Aaron Martin,Pediatrics,27
+434,Douglas Cain,ENT,35
+435,Tina Austin,Oncology,13
+436,Austin Tucker,Orthopedics,21
+437,Matthew Cruz,Oncology,24
+438,Kristen Robinson,Oncology,43
+439,John Thomas,Dermatology,4
+440,Christopher Hess PhD,Oncology,34
+441,Ashley Roberts,ENT,1
+442,David Smith,Dermatology,48
+443,Craig Baker,ENT,28
+444,Nicole Russell,Orthopedics,49
+445,Brooke Roberts,Dermatology,6
+446,Yolanda Gonzales,Pediatrics,22
+447,Teresa Thompson,Emergency,14
+448,Bryan Wood,Pediatrics,24
+449,Jill Houston,Emergency,31
+450,Andrea Mckenzie,Emergency,37
+451,John Jackson,Dermatology,26
+452,Eric Ortiz,Oncology,36
+453,Melissa Cline,Oncology,43
+454,Alison Jones,Orthopedics,33
+455,James Parker,Pediatrics,1
+456,Crystal James,Cardiology,40
+457,Eric Erickson,Dermatology,27
+458,Matthew Ball,Radiology,29
+459,Mr. Christopher Brown,Oncology,43
+460,Barbara Jensen,Dermatology,42
+461,Alison Haas,Neurology,2
+462,Jonathan Moore,Neurology,26
+463,David Rivera,Cardiology,37
+464,Mrs. Lisa Hamilton DVM,Emergency,37
+465,Megan Lee,Cardiology,38
+466,Jennifer Smith,Orthopedics,46
+467,Adam Shepard,Orthopedics,29
+468,Shane Guzman,ENT,35
+469,Brandon Ali,Cardiology,50
+470,Victoria Duran,Orthopedics,19
+471,Jose Hill,Radiology,27
+472,Daniel Schultz,Emergency,41
+473,Candace Robinson,ENT,45
+474,Rachel Russell,Radiology,33
+475,Tina Owens,Radiology,28
+476,Andrew Jones,Radiology,45
+477,Lucas Cameron,Dermatology,38
+478,Victoria King,Cardiology,28
+479,Jessica Cook,General Medicine,50
+480,Sarah Bryant,Neurology,15
+481,Antonio Bowen,Cardiology,5
+482,Amy Reed,Orthopedics,13
+483,Shannon Eaton,Cardiology,6
+484,Jeffrey Barnett,Dermatology,26
+485,Christopher Barr,Emergency,33
+486,Michelle Todd,Radiology,29
+487,Matthew Williams,Oncology,28
+488,Matthew Lewis,Pediatrics,14
+489,Elijah Barnett,ENT,23
+490,David Phillips,Oncology,38
+491,Sylvia Rodriguez,Pediatrics,13
+492,James Parker,Oncology,7
+493,John Fuentes,General Medicine,18
+494,Steven Edwards,Orthopedics,45
+495,Leslie Short,Dermatology,2
+496,Robert Gross,Emergency,25
+497,Angela Mason,Neurology,8
+498,Mr. Michael Edwards,Radiology,30
+499,Tammy Walker,Pediatrics,16
+500,Melissa Medina,Cardiology,45

@@ -1,7 +1,7 @@
 from ai_insights.recommendation_engine import generate_recommendation
 
 
-def generate_llm_insight(metrics):
+def generate_llm_insight(metrics: dict):
 
     summary = f"""
 Total appointments analyzed: {metrics['total_appointments']}
