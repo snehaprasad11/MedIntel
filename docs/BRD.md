@@ -1,89 +1,52 @@
-# Business Requirements Document
+# Business Requirements Document (BRD)
 
-# Project
-
-MedIntel
-
-AI-Powered Hospital Operations Intelligence Platform
-
----
-
-# Business Objective
-
-Provide hospital administrators with operational visibility through analytics, forecasting, and AI-driven insights.
+## Problem Statement
+Hospitals lack real-time visibility into:
+- Doctor workload
+- Patient wait times
+- Department efficiency
+- Resource utilization
 
 ---
 
-# Stakeholders
-
-## Hospital Administrator
-
-Needs visibility into:
-
-* Waiting times
-* Capacity utilization
-* Resource allocation
-
-## Department Head
-
-Needs visibility into:
-
-* Department performance
-* Staffing requirements
-* Operational bottlenecks
-
-## Operations Manager
-
-Needs visibility into:
-
-* Bed occupancy
-* Doctor workload
-* Patient throughput
+## Objectives
+- Build a unified hospital intelligence platform
+- Provide real-time KPIs and dashboards
+- Enable predictive forecasting of demand
+- Generate AI-driven operational insights
 
 ---
 
-# Business Problems
-
-## Long Waiting Times
-
-Patients experience delays due to bottlenecks and capacity constraints.
-
-## Doctor Overload
-
-Uneven patient distribution creates staffing inefficiencies.
-
-## Bed Shortages
-
-Peak demand periods create occupancy challenges.
-
-## Resource Utilization
-
-Resources may be underutilized or overloaded.
+## Stakeholders
+- Hospital Administrators
+- Department Heads
+- Operations Managers
+- Data Analysts
 
 ---
 
-# Key Questions
+## Key Features
 
-Which departments are overloaded?
+### 1. Operational Analytics
+- Appointment trends
+- Wait time analysis
+- Bed utilization
 
-Which doctors have the highest utilization?
+### 2. Doctor Performance System
+- Workload tracking
+- Efficiency ranking
 
-What are peak patient arrival times?
+### 3. Forecasting Engine
+- Predict patient inflow
+- Resource planning
 
-Why did waiting time increase?
-
-Will bed demand exceed capacity?
-
-Which departments require additional staffing?
+### 4. AI Insights Engine
+- Auto-generated summaries
+- Recommendations
 
 ---
 
-# Success Criteria
-
-Reduce waiting times
-
-Improve resource planning
-
-Improve operational visibility
-
-Enable proactive decision-making
+## Success Metrics
+- Reduction in patient wait time
+- Improved resource utilization
+- Accurate forecasting (>85%)

@@ -1,47 +1,46 @@
-# Data Warehouse Design
+# Database Design
 
-## Fact Table
+## Schema Overview
 
-### fact_patient_visits
-
-visit_id
-
-patient_id
-
-doctor_id
-
-department_id
-
-date_id
-
-wait_time
-
-length_of_stay
-
-visit_cost
+Core tables:
+- patients
+- doctors
+- departments
+- appointments_features
+- beds
+- equipment
+- staff
 
 ---
 
-## Dimension Tables
+## Key Relationships
 
-### dim_patient
-
-Patient demographics.
-
-### dim_doctor
-
-Doctor information.
-
-### dim_department
-
-Department information.
-
-### dim_date
-
-Calendar information.
+- patients → appointments (1:M)
+- doctors → appointments (1:M)
+- departments → doctors (1:M)
+- departments → beds (1:M)
 
 ---
 
-## Design Choice
+## Feature Table: appointments_features
 
-A star schema is used because it simplifies analytical queries and improves reporting performance.
+Key engineered fields:
+- wait_time_minutes
+- arrival_hour
+- day_of_week
+- is_weekend
+- doctor_appointments
+- department_appointments
+
+---
+
+## Analytical Views
+
+### vw_daily_operations
+Daily hospital KPIs
+
+### vw_department_summary
+Department efficiency metrics
+
+### vw_doctor_performance
+Doctor workload + performance ranking

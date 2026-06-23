@@ -1,90 +1,33 @@
-# SQL Analytics - MedIntel
-## KPI 1: Total Appointments per Department
-### Purpose
+# SQL Analytics Layer
 
-Identify hospital departments with the highest patient load.
-
-### Formula
-
-COUNT(appointment_id)
-
-### SQL Query
-SELECT 
-    department_id, 
-    COUNT(appointment_id) AS total_appointments
-FROM appointments_features
-GROUP BY department_id;
+## Purpose
+Transforms raw structured data into business intelligence metrics.
 
 ---
-## KPI 2: Doctor Utilization (Overloaded Doctors)
-### Purpose
 
-Find doctors handling the highest number of appointments (workload distribution).
+## Query Categories
 
-### Formula
+### 1. Demand Analysis
+- daily_appointments.sql
+- hourly_trends.sql
 
-COUNT(appointment_id) per doctor
+### 2. Performance Analysis
+- doctor_ranking.sql
+- department_ranking.sql
 
-### SQL Query
-SELECT 
-    doctor_id, 
-    COUNT(appointment_id) AS total_appointments
-FROM appointments_features
-GROUP BY doctor_id
-ORDER BY total_appointments DESC;
+### 3. Efficiency Metrics
+- avg_wait_time.sql
+- doctor_utilization.sql
 
----
-## KPI 3: Peak Hour Traffic Analysis
-### Purpose
-
-Identify the busiest hours in the hospital for staffing optimization.
-
-### Formula
-
-COUNT(appointment_id) grouped by arrival_hour
-
-### SQL Query
-SELECT 
-    arrival_hour, 
-    COUNT(appointment_id) AS total_appointments
-FROM appointments_features
-GROUP BY arrival_hour
-ORDER BY total_appointments DESC;
+### 4. Trend Analysis
+- monthly_trends.sql
+- weekday_trends.sql
+- weekend_analysis.sql
 
 ---
-## KPI 4: Weekend vs Weekday Load
-### Purpose
 
-Compare patient inflow between weekdays and weekends.
+## Views Layer
 
-### Formula
-
-COUNT(appointment_id) grouped by is_weekend
-
-### SQL Query
-SELECT 
-    CASE 
-        WHEN is_weekend = 1 THEN 'Weekend'
-        ELSE 'Weekday'
-    END AS day_type,
-    COUNT(appointment_id) AS total_appointments
-FROM appointments_features
-GROUP BY day_type;
-
----
-## KPI 5: Average Wait Time Trend
-### Purpose
-
-Track hospital efficiency and service delays over time.
-
-### Formula
-
-AVG(wait_time_minutes) per date
-
-### SQL Query
-SELECT 
-    date,
-    AVG(wait_time_minutes) AS avg_wait_time
-FROM appointments_features
-GROUP BY date
-ORDER BY date;
+- vw_daily_operations
+- vw_department_summary
+- vw_doctor_performance

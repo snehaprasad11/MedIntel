@@ -1,51 +1,37 @@
-# Hospital Demand Forecasting System
+# Forecasting System
 
-## Overview
-This project builds a time-series forecasting system for hospital operations including:
-- Patient arrivals prediction
-- Bed demand forecasting
-- ICU occupancy trends
-- Department load estimation
-
----
-
-## Data Pipeline
-- Raw hospital operational data
-- Feature engineering into time-series dataset
-- Aggregation by date
+## Objective
+Predict hospital demand patterns using time-series ML models.
 
 ---
 
 ## Models Used
 
-### 1. Baseline Models
-- Naive forecast (t-1)
-- Moving average (7-day)
+### Prophet Model
+- Captures seasonality
+- Works well with hospital time series
 
-### 2. Prophet Model
-- Captures seasonality and trends
-- Suitable for hospital demand patterns
-
-### 3. XGBoost Model
-- Uses lag features
-- Captures nonlinear relationships
-- Includes rolling statistics and time features
+### XGBoost Model
+- Feature-based prediction
+- Handles nonlinear patterns
 
 ---
 
-## Evaluation Metrics
-- MAE (Mean Absolute Error)
-- RMSE (Root Mean Squared Error)
-- MAPE (Mean Absolute Percentage Error)
+## Features Used
+- Hour of day
+- Day of week
+- Department load
+- Historical appointments
 
 ---
 
-## Key Insight
-XGBoost performs best due to ability to learn nonlinear patterns in hospital demand data.
+## Outputs
+- forecast_dataset.csv
+- prophet_forecast.csv
 
 ---
 
-## Future Improvements
-- Deploy API using FastAPI
-- Integrate with Power BI dashboard
-- Real-time forecasting pipeline
+## Business Use Cases
+- Staffing optimization
+- Bed allocation planning
+- Peak load prediction
