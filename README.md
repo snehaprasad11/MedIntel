@@ -244,35 +244,6 @@ MedIntel demonstrates how data-driven hospital systems can improve operational e
 
 ---
 
-# What I Learned
-
-## Data Engineering
-- Designing ETL pipelines from scratch
-- Building structured analytical data models
-- Feature engineering for operational datasets
-
-## Machine Learning
-- Time-series forecasting with real-world constraints
-- Model evaluation and comparison techniques
-- Feature-driven prediction systems
-
-## AI Systems
-- LLM-based insight generation pipelines
-- Prompt engineering for structured data summarization
-- Combining ML outputs with natural language explanations
-
-## Full-Stack Analytics Engineering
-- Building multi-page Streamlit applications
-- Designing SQL-based analytics layers
-- Integrating Power BI with Python pipelines
-
-## System Design Thinking
-- Modular architecture design
-- Separation of concerns across layers
-- Scalable analytics system design principles
-
----
-
 # Industry Use Cases
 
 MedIntel can be adapted for:
@@ -307,14 +278,3 @@ MedIntel is a complete end-to-end AI-powered hospital intelligence system that d
 - Full-stack analytics engineering
 
 ---
-
-# Recruiter Summary
-
-This project demonstrates the ability to:
-
-- Build production-style data pipelines
-- Design scalable analytics architectures
-- Apply machine learning to operational datasets
-- Integrate AI with structured data systems
-- Build interactive dashboards for decision-making
-- Think in system design and end-to-end product terms
