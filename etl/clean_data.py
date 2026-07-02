@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from pathlib import Path
 
 def clean_patients():
     df = pd.read_csv("data/synthetic/patients.csv")
@@ -145,6 +146,8 @@ def clean_appointments():
     print("Appointments cleaned")
 
 def main():
+    Path("data/clean").mkdir(parents=True, exist_ok=True)
+
     clean_patients()
     clean_doctors()
     clean_departments()
@@ -158,5 +161,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    

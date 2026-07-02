@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
-import os
+from pathlib import Path
 
-os.makedirs("data/features", exist_ok=True)
+Path("data/features").mkdir(parents=True, exist_ok=True)
 
 def load_data():
     df = pd.read_csv("data/clean/appointments.csv")
@@ -63,6 +63,18 @@ def main():
     df = daily_load(df)
 
     df.to_csv("data/features/appointments_features.csv", index=False)
+
+    forecast_dataset = (
+        df.groupby("date", as_index=False)
+        .agg(patient_arrivals=("appointment_id", "count"))
+        .sort_values("date")
+    )
+    forecast_dataset.to_csv("data/features/forecast_dataset.csv", index=False)
+
+    fallback_forecast = forecast_dataset.rename(
+        columns={"date": "ds", "patient_arrivals": "yhat"}
+    )
+    fallback_forecast.to_csv("data/features/prophet_forecast.csv", index=False)
 
     print("Feature engineering completed successfully")
 

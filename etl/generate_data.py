@@ -1,9 +1,14 @@
 from faker import Faker
 import pandas as pd
 import random 
+from pathlib import Path
 from datetime import datetime
 from datetime import timedelta
+
+
 def main():
+    Path("data/synthetic").mkdir(parents=True, exist_ok=True)
+
     fake = Faker()
 
     patients = []
@@ -211,7 +216,7 @@ def main():
             "support_staff_present": support_staff_present
         })
 
-            current_date += timedelta(days=1)
+        current_date += timedelta(days=1)
 
     staff_df = pd.DataFrame(staff)
 

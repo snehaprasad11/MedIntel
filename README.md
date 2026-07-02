@@ -1,280 +1,237 @@
-# MedIntel – Healthcare Intelligence Platform
+# MedIntel
+
+Healthcare operations intelligence platform for hospital demand, wait-time, doctor workload, resource utilization, forecasting, and AI-assisted operational insights.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red)
-![MySQL](https://img.shields.io/badge/MySQL-Database-blue)
+![MySQL](https://img.shields.io/badge/MySQL-Analytics%20DB-blue)
 ![Machine Learning](https://img.shields.io/badge/ML-Forecasting-orange)
-![Status](https://img.shields.io/badge/Status-Completed-success)
-## End-to-End AI + Data Engineering + Analytics System for Hospital Operations
+![Netlify](https://img.shields.io/badge/Netlify-Static%20Preview-00ad9f)
 
-MedIntel is a full-stack healthcare intelligence platform that transforms raw hospital operational data into structured insights, predictive analytics, and AI-assisted decision support.
+## Demo
 
-It integrates a complete analytics ecosystem:
-- Data Engineering (ETL pipelines)
-- SQL-based Analytics (KPI generation layer)
-- Machine Learning (forecasting + anomaly detection)
-- AI Layer (LLM-based insights + recommendations)
-- Business Intelligence (Streamlit dashboards + Power BI reports)
-- Modular system architecture designed for scalability
+![MedIntel animated demo](docs/demo/medintel-demo.gif)
 
----
+## What This Project Shows
 
-# Problem Statement
+MedIntel is an end-to-end data project built around a simulated hospital operations environment. It demonstrates how raw operational data can move through a complete analytics system:
 
-Modern hospital systems face operational inefficiencies such as:
+```text
+Synthetic data -> ETL -> MySQL schema/views -> KPI outputs -> ML forecasting -> AI insights -> Streamlit dashboard
+```
 
-- Lack of visibility into patient flow and waiting time drivers
-- Uneven doctor workload distribution across departments
-- Inability to forecast patient demand accurately
-- Fragmented reporting across departments and systems
-- Heavy reliance on static dashboards or manual Excel-based reporting
+The repository includes two dashboard surfaces:
 
-These limitations prevent data-driven operational decision-making and proactive resource planning.
+- **Streamlit dashboard**: the main interactive Python dashboard, run with `streamlit run dashboard/app.py`.
+- **Netlify static preview**: a fast static landing/dashboard page for portfolio deployment, served from `index.html`.
 
----
+Netlify does not run the Python Streamlit app directly. It hosts the static preview only. The full dashboard should be run locally or deployed to a Python-friendly host such as Streamlit Community Cloud, Render, Railway, or a VM.
 
-# Solution: MedIntel Intelligence System
+## Product Screenshots
 
-MedIntel addresses these challenges by building an end-to-end data-to-insights pipeline:
+### Streamlit Dashboard
 
-Raw Hospital Data → ETL Pipeline → MySQL Database → SQL Analytics Layer → ML Forecasting Engine → AI Insight Generator → Streamlit Dashboard + Power BI Reports
+| Executive | Analytics | Forecasting |
+| --- | --- | --- |
+| ![Executive dashboard](docs/demo/executive.png) | ![Analytics dashboard](docs/demo/analytics.png) | ![Forecasting dashboard](docs/demo/forecasting.png) |
 
----
+| Resources | AI Insights |
+| --- | --- |
+| ![Resources dashboard](docs/demo/resources.png) | ![AI insights dashboard](docs/demo/ai-insights.png) |
 
-# System Architecture
+### Power BI Dashboard Screens
 
-## 1. Data Layer
+These screenshots are manually created Power BI dashboard views included as project documentation assets.
 
-The system uses structured synthetic hospital datasets representing real-world hospital operations.
+| Executive Summary | Department Analysis | Operational Intelligence |
+| --- | --- | --- |
+| ![Power BI executive summary](docs/images/Executive_Summary.png) | ![Power BI department analysis](docs/images/Department_Analysis.png) | ![Power BI operational intelligence](docs/images/Operational_Intelligence.png) |
 
-Entities include:
-- Patients
-- Doctors
-- Departments
-- Appointments
-- Beds
-- Equipment
-- Staff
+| Business Insights | Doctor Workload | Heatmap Analysis |
+| --- | --- | --- |
+| ![Business insights dashboard](docs/images/Business_Insights_Hospital_Operations.png) | ![Doctor workload dashboard](docs/images/Doctor_Performance_And_Workload_Intelligence.png) | ![Heatmap dashboard](docs/images/Heatmap_Analysis.png) |
 
-This layer simulates realistic hospital operational data.
+## Core Features
 
----
+- Synthetic hospital data generation for patients, doctors, departments, appointments, beds, staff, and equipment.
+- Cleaning and feature engineering pipeline for analytics-ready CSV datasets.
+- MySQL schema and analytical views for KPI reporting.
+- Streamlit multipage dashboard for executive, analytics, forecasting, doctor, resource, and AI insight views.
+- Forecasting workflow with baseline, Prophet, XGBoost, and evaluation scripts.
+- AI insight layer that converts KPI metrics into natural language recommendations.
+- Static Netlify preview for a fast public portfolio page.
+- Power BI dashboard screenshots documenting executive BI outputs.
 
-## 2. ETL Layer (`/etl`)
+## Repository Map
 
-The ETL layer is responsible for data preparation and pipeline orchestration:
+```text
+ai_insights/       KPI summarization and recommendation logic
+analytics/         SQL KPI runner and exported CSV outputs
+assets/            Logo and static site assets
+dashboard/         Streamlit app and multipage dashboard
+data/              Synthetic, clean, and feature-engineered CSV data
+docs/              Architecture, database, deployment, BI images, demo assets
+etl/               Data generation, cleaning, feature engineering, MySQL loading
+ml_models/         Forecasting, anomaly detection, and evaluation scripts
+sql/               MySQL schema, views, and analysis queries
+index.html         Netlify/static preview entry point
+netlify.toml       Netlify static hosting configuration
+```
 
-- Data generation (`generate_data.py`)
-- Data cleaning (`clean_data.py`)
-- Feature engineering (`feature_engineering.py`)
-- MySQL ingestion (`load_mysql.py`)
-- Pipeline execution (`run_pipeline.py`)
+## Quickstart
 
-This transforms raw datasets into analytics-ready structured data.
+### 1. Create a virtual environment
 
----
+```bash
+python -m venv .venv
+```
 
-## 3. Database Layer (MySQL)
+Activate it:
 
-A normalized relational schema acts as the core data warehouse layer.
+```bash
+# macOS/Linux
+source .venv/bin/activate
 
-Key analytical views:
-- vw_daily_operations
-- vw_department_summary
-- vw_doctor_performance
+# Windows PowerShell
+.venv\Scripts\activate
+```
 
-This layer serves as the single source of truth for analytics and ML workflows.
+### 2. Install dependencies
 
----
+```bash
+pip install -r requirements.txt
+```
 
-## 4. SQL Analytics Layer (`/sql`)
+### 3. Generate local analytics data
 
-This layer converts raw structured data into business KPIs.
+```bash
+python etl/run_pipeline.py
+```
 
-Key analytical areas:
-- Patient inflow trends
-- Doctor utilization and workload analysis
-- Department-level performance metrics
-- Hourly and daily traffic patterns
-- Weekend vs weekday operational differences
+By default, this generates CSV data and skips MySQL loading. This makes the dashboard easy to run without a database.
 
-This acts as the business intelligence transformation layer.
+### 4. Run the Streamlit dashboard
 
----
+```bash
+streamlit run dashboard/app.py
+```
 
-## 5. Machine Learning Layer (`/ml_models`)
+Open the local app at:
 
-The ML layer provides predictive intelligence on hospital operations.
+```text
+http://localhost:8501
+```
 
-### Models implemented:
-- Prophet (time-series forecasting)
-- XGBoost (feature-based prediction)
-- Anomaly detection model
-- Evaluation framework for model performance
+## MySQL Setup
 
-### Outputs:
-- Patient demand forecasting
-- Department-level load prediction
-- Resource utilization forecasting
+The canonical schema is:
 
----
+```text
+sql/schema/create_tables.sql
+```
 
-## 6. AI Insights Engine (`/ai_insights`)
+This schema matches the ETL loader and analytics queries. It creates:
 
-This layer converts structured analytics outputs into natural language insights.
+- `patients`
+- `doctors`
+- `departments`
+- `appointments_features`
+- `beds`
+- `staff`
+- `equipment`
+- KPI views such as `vw_daily_operations`, `vw_department_summary`, and `vw_doctor_performance`
 
-Capabilities:
-- KPI summarization using LLM-based pipelines
-- Automated operational insight generation
-- Recommendation system for hospital efficiency
-- Prompt-engineered insight generation from structured SQL outputs
+To load data into MySQL:
 
-Example output:
-“Emergency department load is significantly above baseline during peak hours, indicating a need for dynamic staff reallocation.”
+1. Run `sql/schema/create_tables.sql` in MySQL.
+2. Copy `.env.example` to `.env` and set the database values.
+3. Run the pipeline with MySQL loading enabled:
 
----
+```bash
+LOAD_MYSQL=true python etl/run_pipeline.py
+```
 
-## 7. Dashboard Layer (`/dashboard`)
+On Windows PowerShell:
 
-A multi-page Streamlit application for interactive analytics:
+```powershell
+$env:LOAD_MYSQL="true"
+python etl/run_pipeline.py
+```
 
-- Executive Overview Dashboard
-- Analytics & KPI Exploration
-- Forecasting Dashboard
-- Doctor Performance Analysis
-- Resource Utilization Monitoring
-- AI Insights Panel
+Note: the schema file resets the `medintel` database, so only run it when a fresh rebuild is intended.
 
-This layer serves as the primary user-facing analytics interface.
+## Static Netlify Preview
 
----
+The repo includes a lightweight static dashboard preview for Netlify:
 
-# Power BI Integration
+- `index.html`
+- `assets/site.css`
+- `assets/site.js`
+- `netlify.toml`
 
-Power BI is used as an executive reporting layer to complement the Streamlit dashboard.
+This preview reads CSV summaries from `analytics/output/` and displays a fast portfolio-friendly dashboard. It is not a replacement for the Streamlit app; it is a static public preview.
 
-## Included Dashboards:
-- Executive Hospital Overview
-- Department Performance Analysis
-- Doctor Workload Distribution
-- Operational Heatmaps and KPI Trends
+For Netlify:
 
-## Location:
-`/docs/images/`
+- Build command: leave empty
+- Publish directory: `.`
 
-These dashboards simulate executive-level reporting used in enterprise BI systems.
+## Data and Analytics Outputs
 
----
+Key generated and/or included outputs:
 
-# API Integration (Future Ready Design)
+- `data/synthetic/`: generated raw hospital datasets
+- `data/clean/`: cleaned operational datasets
+- `data/features/appointments_features.csv`: main feature table
+- `data/features/forecast_dataset.csv`: forecasting input
+- `data/features/prophet_forecast.csv`: forecast output or local fallback
+- `analytics/output/`: CSV KPI summaries used by static preview and BI storytelling
 
-The system architecture is designed to support future API-based expansion.
+## Machine Learning Layer
 
-Planned enhancements:
-- FastAPI layer for data access and model serving
-- Real-time hospital data ingestion pipelines
-- Integration with external EHR systems
-- Live dashboard updates
-- Cloud deployment (AWS/GCP)
+The ML layer includes:
 
----
+- `ml_models/data_prep.py`: builds forecasting dataset
+- `ml_models/baseline_model.py`: naive and moving-average baselines
+- `ml_models/prophet_model.py`: time-series forecasting
+- `ml_models/xgboost_model.py`: feature-based demand modeling
+- `ml_models/anamoly_detector.py`: anomaly detection workflow
+- `ml_models/evaluation.py`: model quality metrics
 
-# Key Features
+## AI Insights Layer
 
-## Intelligence Layer
-- AI-generated hospital operational insights
-- Automated KPI narrative summaries
-- Predictive workload forecasting
+The AI layer converts structured metrics into business-friendly recommendations:
 
-## Analytics Layer
-- Doctor performance ranking system
-- Department-level load analysis
-- Wait time and bottleneck detection
-- Operational efficiency tracking
+- `ai_insights/analytics_engine.py`: KPI metric preparation
+- `ai_insights/recommendation_engine.py`: rule-based recommendations
+- `ai_insights/openai_insights.py`: insight formatting layer
+- `dashboard/pages/6_AI.py`: Streamlit AI insights page
 
-## Engineering Layer
-- Modular ETL pipeline architecture
-- SQL-based analytics warehouse design
-- Feature-engineered datasets for ML
-- Cached dashboard service layer
+The default project flow works without an OpenAI key. Environment variables are documented in `.env.example`.
 
----
+## Documentation
 
-# Tech Stack
+- [Architecture](docs/Architecture.md)
+- [Database Design](docs/DatabaseDesign.md)
+- [Deployment Guide](docs/Deployment.md)
+- [Forecasting](docs/Forecasting.md)
+- [KPI Framework](docs/KPIFramework.md)
+- [SQL Analytics](docs/SQL_Analytics.md)
+- [AI Insights](docs/AIInsights.md)
+- [Case Study](docs/CaseStudy.md)
+- [Business Requirements](docs/BRD.md)
 
-## Programming Language
-- Python 3.10+
+## Business Value
 
-## Data Engineering
-- Pandas
-- NumPy
-- MySQL
+MedIntel demonstrates how hospital operations teams can use data systems to:
 
-## Machine Learning
-- Prophet
-- XGBoost
-- Scikit-learn
+- Identify wait-time bottlenecks.
+- Monitor department demand.
+- Balance doctor workload.
+- Track resource and bed utilization.
+- Forecast patient demand.
+- Generate operational recommendations from KPI data.
 
-## AI Layer
-- OpenAI API (LLM-based insights)
-- Prompt engineering framework
+## Status
 
-## Visualization
-- Streamlit
-- Power BI
-
-## Database
-- MySQL (relational schema + analytical views)
-
-## Tools & Version Control
-- Git & GitHub
-- Modular Python architecture
-
----
-
-# Business Impact (Simulated)
-
-MedIntel demonstrates how data-driven hospital systems can improve operational efficiency by enabling:
-
-- Reduced patient waiting time through demand visibility
-- Improved doctor workload balancing
-- Predictive staffing and resource allocation
-- Identification of operational bottlenecks
-- Executive-level visibility into hospital KPIs
-
----
-
-# Industry Use Cases
-
-MedIntel can be adapted for:
-
-- Hospital operations optimization systems
-- Patient flow prediction platforms
-- Workforce and resource management tools
-- Enterprise BI + AI decision platforms
-- Healthcare analytics dashboards
-
----
-
-# Future Enhancements
-
-- Real-time streaming data pipeline (Kafka / Spark)
-- FastAPI backend for model serving and APIs
-- Cloud deployment (AWS / GCP)
-- Role-based authentication system
-- Advanced anomaly detection models
-- Integration with real hospital EHR systems
-
----
-
-# Final Outcome
-
-MedIntel is a complete end-to-end AI-powered hospital intelligence system that demonstrates:
-
-- Data Engineering (ETL + SQL modeling)
-- Machine Learning (forecasting + anomaly detection)
-- AI Systems (LLM-based insight generation)
-- Business Intelligence (Streamlit + Power BI)
-- Full-stack analytics engineering
-
----
+This is a portfolio-ready analytics engineering project with a runnable Streamlit dashboard, MySQL schema, static Netlify preview, demo screenshots, Power BI dashboard images, and documented setup paths.

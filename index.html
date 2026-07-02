@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MedIntel healthcare operations intelligence dashboard.">
+    <title>MedIntel | Healthcare Intelligence</title>
+    <link rel="preload" href="assets/site.css" as="style">
+    <link rel="stylesheet" href="assets/site.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Dashboard navigation">
+        <a class="brand" href="#overview" aria-label="MedIntel overview">
+          <img src="assets/medintel_logo.png" alt="" width="40" height="40">
+          <span>MedIntel</span>
+        </a>
+        <nav>
+          <a href="#overview" class="active">Overview</a>
+          <a href="#departments">Departments</a>
+          <a href="#traffic">Traffic</a>
+          <a href="#reports">Reports</a>
+        </nav>
+      </aside>
+
+      <main>
+        <section id="overview" class="topbar">
+          <div>
+            <p class="eyebrow">Hospital operations intelligence</p>
+            <h1>Executive Dashboard</h1>
+          </div>
+          <a class="repo-link" href="https://github.com/snehaprasad11/MedIntel">GitHub</a>
+        </section>
+
+        <section class="metric-grid" aria-label="Key performance indicators">
+          <article class="metric">
+            <span>Total appointments</span>
+            <strong id="appointmentsMetric">--</strong>
+          </article>
+          <article class="metric">
+            <span>Average wait</span>
+            <strong id="waitMetric">--</strong>
+          </article>
+          <article class="metric">
+            <span>Peak hour</span>
+            <strong id="hourMetric">--</strong>
+          </article>
+          <article class="metric">
+            <span>Weekend mix</span>
+            <strong id="weekendMetric">--</strong>
+          </article>
+        </section>
+
+        <section class="panel wide" id="traffic">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Daily operations</p>
+              <h2>Wait Time Trend</h2>
+            </div>
+            <span id="trendRange">Loading data</span>
+          </div>
+          <canvas id="waitChart" width="1200" height="360" aria-label="Average wait time line chart"></canvas>
+        </section>
+
+        <section class="split" id="departments">
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Department load</p>
+                <h2>Highest Volume</h2>
+              </div>
+            </div>
+            <div id="departmentBars" class="bars" aria-label="Department appointment volume"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Patient flow</p>
+                <h2>Hourly Traffic</h2>
+              </div>
+            </div>
+            <div id="hourBars" class="bars compact" aria-label="Hourly traffic volume"></div>
+          </article>
+        </section>
+
+        <section class="panel" id="reports">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">BI snapshots</p>
+              <h2>Operational Views</h2>
+            </div>
+          </div>
+          <div class="report-grid">
+            <img loading="lazy" src="docs/images/Executive_Summary.png" alt="Executive summary dashboard">
+            <img loading="lazy" src="docs/images/Department_Analysis.png" alt="Department analysis dashboard">
+            <img loading="lazy" src="docs/images/Operational_Intelligence.png" alt="Operational intelligence dashboard">
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="assets/site.js" defer></script>
+  </body>
+</html>

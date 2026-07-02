@@ -1,3 +1,5 @@
+import os
+
 import pandas as pd
 import mysql.connector
 
@@ -6,10 +8,10 @@ import mysql.connector
 # =========================
 def get_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="password",
-        database="medintel"
+        host=os.getenv("MYSQL_HOST", "localhost"),
+        user=os.getenv("MYSQL_USER", "root"),
+        password=os.getenv("MYSQL_PASSWORD", "password"),
+        database=os.getenv("MYSQL_DATABASE", "medintel")
     )
 
 # =========================
