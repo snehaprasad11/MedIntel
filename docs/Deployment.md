@@ -83,11 +83,11 @@ For a complete portfolio setup:
 2. Deploy the Streamlit app separately on Streamlit Community Cloud, Render, Railway, or another Python host.
 3. Link the hosted Streamlit dashboard from the Netlify page or README.
 
-### Use `requirements-dashboard.txt` for the Streamlit Cloud deploy
+### Why there's a `dashboard/requirements.txt`
 
 `dashboard/app.py` and everything under `dashboard/pages/` only import `pandas` and `streamlit` at runtime — they read pre-computed CSVs from `data/`, they never call Prophet, XGBoost, or MySQL live (those are only used by the offline `etl/` and `analytics/` scripts). `prophet` in particular is slow and prone to build failures on constrained cloud build environments, since it compiles Stan under the hood.
 
-When creating the app on Streamlit Community Cloud, open **Advanced settings** before deploying and set the dependencies file to `requirements-dashboard.txt` instead of the default `requirements.txt`. This installs only what the deployed dashboard actually needs, making the build faster and far less likely to fail. Use the full `requirements.txt` only for local development where you're running the whole ETL/ML pipeline.
+Streamlit Community Cloud looks for a `requirements.txt` in the same folder as the app's main file first, before falling back to the repo root — there is no manual "pick a dependencies file" option in its deploy UI. So `dashboard/requirements.txt` (just `pandas` + `streamlit`) is what actually gets installed when deploying with **Main file path: `dashboard/app.py`**, automatically, with nothing to configure. The root `requirements.txt` (with the full pipeline dependencies) is only used for local development when running the whole ETL/ML pipeline.
 
 ## Demo Assets
 
