@@ -14,16 +14,19 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("Department Load")
-    st.caption("Appointment count by department.")
-    st.bar_chart(appointments.groupby("department_id").size())
+    st.caption("Top 15 departments by appointment count (of 50 total).")
+    dept_load = appointments.groupby("department_id").size().sort_values(ascending=False).head(15)
+    st.bar_chart(dept_load)
 
 with col2:
     st.subheader("Doctor Workload")
-    st.caption("Appointment count by doctor.")
-    st.bar_chart(appointments.groupby("doctor_id").size())
+    st.caption("Top 15 busiest doctors by appointment count (of 500 total).")
+    doctor_load = appointments.groupby("doctor_id").size().sort_values(ascending=False).head(15)
+    st.bar_chart(doctor_load)
 
 st.divider()
 
 st.subheader("Wait Time Trend")
-st.caption("Wait time in minutes across all recorded appointments, in order.")
-st.line_chart(appointments["wait_time_minutes"])
+st.caption("Average wait time per day, across the full date range — not every individual appointment (100,000 of them), which was both slow to render and too noisy to read as a trend.")
+daily_wait_time = appointments.groupby("date")["wait_time_minutes"].mean().sort_index()
+st.line_chart(daily_wait_time)
