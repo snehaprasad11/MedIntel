@@ -25,6 +25,16 @@ def train_forecast():
         fallback.to_csv("data/features/prophet_forecast.csv", index=False)
 
 
+def compare_models():
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from ml_models import model_comparison
+
+    try:
+        model_comparison.main()
+    except Exception as e:
+        print(f"WARNING: model comparison failed ({e}), skipping.")
+
+
 def main():
 
     print("STEP 1: Generating data...")
@@ -39,13 +49,16 @@ def main():
     print("STEP 4: Training forecast model...")
     train_forecast()
 
+    print("STEP 5: Comparing forecasting models...")
+    compare_models()
+
     if os.getenv("LOAD_MYSQL", "false").lower() in {"1", "true", "yes"}:
         import load_mysql
 
-        print("STEP 5: Loading into MySQL...")
+        print("STEP 6: Loading into MySQL...")
         load_mysql.main()
     else:
-        print("STEP 5: Skipping MySQL load. Set LOAD_MYSQL=true to enable it.")
+        print("STEP 6: Skipping MySQL load. Set LOAD_MYSQL=true to enable it.")
 
     print("PIPELINE COMPLETED SUCCESSFULLY")
 

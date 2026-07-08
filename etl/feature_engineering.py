@@ -52,6 +52,35 @@ def daily_load(df):
 
     return df
 
+def build_forecast_dataset(appointments_df):
+    """Daily aggregates used to train the forecasting models: patient
+    arrivals, bed demand, ICU occupancy, and department load. Beds data
+    is merged in here so this stays the single source of truth for
+    data/features/forecast_dataset.csv (previously duplicated, with a
+    thinner version, by ml_models/data_prep.py)."""
+
+    beds = pd.read_csv("data/clean/beds.csv")
+    beds["date"] = pd.to_datetime(beds["date"]).dt.date
+
+    patient_arrivals = appointments_df.groupby("date", as_index=False).agg(
+        patient_arrivals=("appointment_id", "count")
+    )
+    bed_demand = beds.groupby("date", as_index=False).agg(bed_demand=("occupied_beds", "mean"))
+    icu_occupancy = beds.groupby("date", as_index=False).agg(icu_occupancy=("occupied_icu_beds", "mean"))
+    dept_load = appointments_df.groupby("date", as_index=False).agg(dept_load=("department_id", "count"))
+
+    forecast_dataset = (
+        patient_arrivals
+        .merge(bed_demand, on="date", how="outer")
+        .merge(icu_occupancy, on="date", how="outer")
+        .merge(dept_load, on="date", how="outer")
+        .sort_values("date")
+        .fillna(0)
+    )
+
+    return forecast_dataset
+
+
 def main():
 
     df = load_data()
@@ -64,15 +93,11 @@ def main():
 
     df.to_csv("data/features/appointments_features.csv", index=False)
 
-    forecast_dataset = (
-        df.groupby("date", as_index=False)
-        .agg(patient_arrivals=("appointment_id", "count"))
-        .sort_values("date")
-    )
+    forecast_dataset = build_forecast_dataset(df)
     forecast_dataset.to_csv("data/features/forecast_dataset.csv", index=False)
 
     print("Feature engineering completed successfully")
-    print("Note: data/features/prophet_forecast.csv is produced separately by ml_models/prophet_model.py")
+    print("Note: data/features/prophet_forecast.csv and model_comparison.csv are produced separately by ml_models/")
 
 
 if __name__ == "__main__":

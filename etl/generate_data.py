@@ -9,7 +9,9 @@ from datetime import timedelta
 def main():
     Path("data/synthetic").mkdir(parents=True, exist_ok=True)
 
+    random.seed(42)
     fake = Faker()
+    Faker.seed(42)
 
     patients = []
 
@@ -109,7 +111,13 @@ def main():
         arrival_hour,
         arrival_minute
     )
-        wait_minutes = random.randint(5,120)
+        # 95% of appointments run a normal length; ~5% run into a
+        # genuine delay (uniform(5,120) alone has no long tail, so
+        # nothing could ever register as a real statistical outlier)
+        if random.random() < 0.05:
+            wait_minutes = random.randint(90, 240)
+        else:
+            wait_minutes = random.randint(5, 60)
         consultation_time = (
         arrival_time +
         timedelta(minutes=wait_minutes)
