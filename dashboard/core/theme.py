@@ -126,10 +126,6 @@ def apply_theme(mode="light"):
             border: 3px solid {theme['text']};
             border-radius: 16px;
         }}
-        input, textarea {{
-            border-radius: 12px !important;
-            border: 2px solid {theme['text']} !important;
-        }}
         </style>
         {DOODLE_SVG}
         """,
