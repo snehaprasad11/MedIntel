@@ -1,237 +1,200 @@
 # MedIntel
 
-Healthcare operations intelligence platform for hospital demand, wait-time, doctor workload, resource utilization, forecasting, and AI-assisted operational insights.
+MedIntel is a hospital operations dashboard: departments submit live bed, ICU, and staffing numbers, and the app turns that into an executive overview, resource utilization tracking, wait-time anomaly detection, demand forecasting, and an AI-generated plain-English recommendation — scoped privately to each hospital's own account.
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue)
+**Live app: [medintel-izdnnaskn4d4jizmzf6pje.streamlit.app](https://medintel-izdnnaskn4d4jizmzf6pje.streamlit.app)** — click **View Demo** to explore immediately with no account, or **Sign Up** to create a real hospital account and submit your own data.
+
+![Python](https://img.shields.io/badge/Python-3.14-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red)
-![MySQL](https://img.shields.io/badge/MySQL-Analytics%20DB-blue)
-![Machine Learning](https://img.shields.io/badge/ML-Forecasting-orange)
-![Netlify](https://img.shields.io/badge/Netlify-Static%20Preview-00ad9f)
+![MySQL](https://img.shields.io/badge/MySQL-TiDB%20Cloud-4479a1)
+![Prophet](https://img.shields.io/badge/Prophet-Forecasting-0668E1)
+![XGBoost](https://img.shields.io/badge/XGBoost-Model%20Comparison-orange)
 
-## Demo
+## Contents
 
-![MedIntel animated demo](docs/demo/medintel-demo.gif)
+- [Demo Video](#demo-video)
+- [Screenshots](#screenshots)
+- [Why This Exists](#why-this-exists)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [Local Setup](#local-setup)
+- [User Manual](#user-manual)
+- [The Offline Data/ML Pipeline](#the-offline-dataml-pipeline)
+- [Known Limitations](#known-limitations)
+- [Resume Bullets](#resume-bullets)
+- [Status](#status)
 
-## What This Project Shows
+## Demo Video
 
-MedIntel is an end-to-end data project built around a simulated hospital operations environment. It demonstrates how raw operational data can move through a complete analytics system:
+*(to be added — a short screen recording walking through: View Demo → Sign Up → Log In → Submit Update → Executive/Resources/Forecasting/AI pages showing the just-submitted data)*
 
-```text
-Synthetic data -> ETL -> MySQL schema/views -> KPI outputs -> ML forecasting -> AI insights -> Streamlit dashboard
-```
+## Screenshots
 
-The repository includes two dashboard surfaces:
+*(to be added — see the checklist in the project notes for exactly which views to capture)*
 
-- **Streamlit dashboard**: the main interactive Python dashboard, run with `streamlit run dashboard/app.py`.
-- **Netlify static preview**: a fast static landing/dashboard page for portfolio deployment, served from `index.html`.
+## Why This Exists
 
-Netlify does not run the Python Streamlit app directly. It hosts the static preview only. The full dashboard should be run locally or deployed to a Python-friendly host such as Streamlit Community Cloud, Render, Railway, or a VM.
+Hospital departments track bed, ICU, and staffing numbers constantly, but that data is often stuck in spreadsheets or siloed systems with no shared, real-time view across departments. MedIntel gives a hospital one place to log current numbers and immediately see the operational picture: which departments are strained, whether wait times are drifting, and what the near-term bed-demand trend looks like — without needing a data team to build it.
 
-## Product Screenshots
+## Features
 
-### Streamlit Dashboard
+- **Two ways to use it**: a **View Demo** mode (no account, explores six years of realistic simulated hospital data) and a real **Sign Up / Log In** flow for hospitals to track their own live data — both live on the same public app.
+- **Real authentication** — bcrypt-hashed passwords, session-scoped access; each hospital only ever sees its own submitted data.
+- **Live data entry** ("Submit Update" page) — per-department beds, ICU beds, staffing, and average wait time, with server-side validation (occupied can't exceed total, no negative values).
+- **Executive Overview** — headline metrics at a glance: departments reporting, average wait time, average bed occupancy.
+- **Analytics** — bed occupancy and wait time compared across departments, plus a wait-time trend over your submission history.
+- **Resource Utilization** — bed/ICU occupancy by department, with a strain warning above 85%.
+- **Wait-Time Anomaly Detection** — statistically flags submissions where wait time is unusually high relative to a hospital's own history (z-score based).
+- **Forecasting** — projects your bed-occupancy trend forward using Prophet, once you have 14+ days of submission history (gated with a progress indicator until then, rather than showing a meaningless chart).
+- **AI Insights** — a plain-English summary and a rule-based operational recommendation, generated live from the same metrics as the other pages.
+- **Demo mode's dataset is a real, working ML showcase**: a synthetic 6-year hospital dataset (Faker-generated, reproducible via a fixed seed) flows through a full ETL pipeline into a genuine model comparison — naive baseline, 7-day moving average, XGBoost, and Prophet, each backtested on the same held-out window with real MAE/RMSE/MAPE (moving average currently wins — a real finding, not cherry-picked).
 
-| Executive | Analytics | Forecasting |
-| --- | --- | --- |
-| ![Executive dashboard](docs/demo/executive.png) | ![Analytics dashboard](docs/demo/analytics.png) | ![Forecasting dashboard](docs/demo/forecasting.png) |
+## Tech Stack
 
-| Resources | AI Insights |
+| Layer | Tech |
 | --- | --- |
-| ![Resources dashboard](docs/demo/resources.png) | ![AI insights dashboard](docs/demo/ai-insights.png) |
+| App / UI | Streamlit |
+| Auth | bcrypt password hashing, session-based access control |
+| Live database | MySQL (TiDB Cloud Serverless), via SQLAlchemy + PyMySQL |
+| Forecasting | Prophet (live, per-hospital) + Prophet/XGBoost/baselines (offline model comparison) |
+| Data processing | Pandas, NumPy |
+| Synthetic data | Faker |
+| Deployment | Streamlit Community Cloud |
+| Secrets | Streamlit Cloud Secrets (deployed) / `.env` via python-dotenv (local) |
+| Offline BI | MySQL analytics schema + Power BI (separate from the live app's schema — see [Local Setup](#local-setup)) |
 
-### Power BI Dashboard Screens
+## Architecture
 
-These screenshots are manually created Power BI dashboard views included as project documentation assets.
+```mermaid
+flowchart TD
+    subgraph Live App
+        A[Visitor] --> B{View Demo or Log In?}
+        B -->|View Demo| C[Read synthetic CSVs<br/>data/features, data/clean]
+        B -->|Sign Up / Log In| D["bcrypt auth<br/>(dashboard/core/auth.py, db.py)"]
+        D --> E[Submit Update form<br/>server-side validated]
+        E --> F[(MySQL: hospitals,<br/>department_snapshots)]
+        D --> G[Executive / Analytics / Resources /<br/>Doctor / Forecasting / AI pages]
+        F --> G
+        C --> G
+        G -->|14+ days history| H[Live Prophet forecast]
+    end
 
-| Executive Summary | Department Analysis | Operational Intelligence |
-| --- | --- | --- |
-| ![Power BI executive summary](docs/images/Executive_Summary.png) | ![Power BI department analysis](docs/images/Department_Analysis.png) | ![Power BI operational intelligence](docs/images/Operational_Intelligence.png) |
+    subgraph Offline pipeline - powers Demo mode
+        I[generate_data.py<br/>Faker, seeded] --> J[clean_data.py]
+        J --> K[feature_engineering.py]
+        K --> L[ml_models/model_comparison.py<br/>naive, moving avg, XGBoost, Prophet]
+        K --> M[ml_models/prophet_model.py<br/>production forecast]
+        L --> C
+        M --> C
+    end
+```
 
-| Business Insights | Doctor Workload | Heatmap Analysis |
-| --- | --- | --- |
-| ![Business insights dashboard](docs/images/Business_Insights_Hospital_Operations.png) | ![Doctor workload dashboard](docs/images/Doctor_Performance_And_Workload_Intelligence.png) | ![Heatmap dashboard](docs/images/Heatmap_Analysis.png) |
-
-## Core Features
-
-- Synthetic hospital data generation for patients, doctors, departments, appointments, beds, staff, and equipment.
-- Cleaning and feature engineering pipeline for analytics-ready CSV datasets.
-- MySQL schema and analytical views for KPI reporting.
-- Streamlit multipage dashboard for executive, analytics, forecasting, doctor, resource, and AI insight views.
-- Forecasting workflow with baseline, Prophet, XGBoost, and evaluation scripts.
-- AI insight layer that converts KPI metrics into natural language recommendations.
-- Static Netlify preview for a fast public portfolio page.
-- Power BI dashboard screenshots documenting executive BI outputs.
-
-## Repository Map
+## Project Structure
 
 ```text
-ai_insights/       KPI summarization and recommendation logic
-analytics/         SQL KPI runner and exported CSV outputs
-assets/            Logo and static site assets
-dashboard/         Streamlit app and multipage dashboard
-data/              Synthetic, clean, and feature-engineered CSV data
-docs/              Architecture, database, deployment, BI images, demo assets
-etl/               Data generation, cleaning, feature engineering, MySQL loading
-ml_models/         Forecasting, anomaly detection, and evaluation scripts
-sql/               MySQL schema, views, and analysis queries
-index.html         Netlify/static preview entry point
-netlify.toml       Netlify static hosting configuration
+dashboard/
+├── app.py                  # landing page: View Demo / Log In / Sign Up
+├── core/
+│   ├── db.py                # MySQL engine, schema bootstrap, auth, validated writes/reads
+│   ├── auth.py               # session-state mode/access helpers
+│   ├── theme.py               # centralized CSS injection, called on every page
+│   └── data_loader.py          # demo-mode CSV loading
+├── pages/
+│   ├── 1_Submit_Update.py       # live data entry (logged-in only)
+│   ├── 2_Executive.py            # dual-mode: demo CSV or live DB
+│   ├── 3_Analytics.py
+│   ├── 4_Forecasting.py           # live Prophet forecast, gated on history length
+│   ├── 5_Doctor.py                 # per-doctor (demo) / per-department anomalies (live)
+│   ├── 6_Resources.py
+│   └── 7_AI.py
+└── requirements.txt          # lean deployment deps (includes prophet - live forecasting needs it)
+
+ai_insights/          # metrics -> plain-English summary + recommendation
+ml_models/            # prophet_model.py, xgboost_model.py, model_comparison.py, anamoly_detector.py
+etl/                  # generate_data.py, clean_data.py, feature_engineering.py, load_mysql.py, run_pipeline.py
+data/                 # synthetic/, clean/, features/ - demo-mode CSVs (committed, no real PII, Faker-generated)
+sql/                  # offline analytics schema/views (separate from the live app's schema)
+schema.sql             # the LIVE app's schema (hospitals, department_snapshots) - reference only, app creates it automatically
+docs/                 # architecture/design docs, demo assets, Power BI screenshots
+index.html, netlify.toml   # separate static portfolio preview (not the live app)
 ```
 
-## Quickstart
+## Local Setup
 
-### 1. Create a virtual environment
+**To just run the dashboard against the live schema (no offline pipeline needed):**
 
-```bash
-python -m venv .venv
 ```
-
-Activate it:
-
-```bash
-# macOS/Linux
-source .venv/bin/activate
-
-# Windows PowerShell
-.venv\Scripts\activate
-```
-
-### 2. Install dependencies
-
-```bash
 pip install -r requirements.txt
 ```
 
-### 3. Generate local analytics data
+Create a `.env` in the project root (never commit this):
 
-```bash
-python etl/run_pipeline.py
+```
+DB_HOST=your-tidb-host
+DB_PORT=4000
+DB_USER=your-tidb-user
+DB_PASSWORD=your-tidb-password
+DB_NAME=medintel
 ```
 
-By default, this generates CSV data and skips MySQL loading. This makes the dashboard easy to run without a database.
+Then:
 
-### 4. Run the Streamlit dashboard
-
-```bash
+```
 streamlit run dashboard/app.py
 ```
 
-Open the local app at:
+The database and tables (`hospitals`, `department_snapshots`) are created automatically on first run — `schema.sql` is kept only as a readable reference, you don't need to run it by hand.
 
-```text
-http://localhost:8501
+**To also regenerate the demo dataset / rerun the offline ML pipeline:**
+
 ```
-
-## MySQL Setup
-
-The canonical schema is:
-
-```text
-sql/schema/create_tables.sql
-```
-
-This schema matches the ETL loader and analytics queries. It creates:
-
-- `patients`
-- `doctors`
-- `departments`
-- `appointments_features`
-- `beds`
-- `staff`
-- `equipment`
-- KPI views such as `vw_daily_operations`, `vw_department_summary`, and `vw_doctor_performance`
-
-To load data into MySQL:
-
-1. Run `sql/schema/create_tables.sql` in MySQL.
-2. Copy `.env.example` to `.env` and set the database values.
-3. Run the pipeline with MySQL loading enabled:
-
-```bash
-LOAD_MYSQL=true python etl/run_pipeline.py
-```
-
-On Windows PowerShell:
-
-```powershell
-$env:LOAD_MYSQL="true"
 python etl/run_pipeline.py
+python -m ml_models.model_comparison
 ```
 
-Note: the schema file resets the `medintel` database, so only run it when a fresh rebuild is intended.
+This regenerates `data/synthetic/`, `data/clean/`, `data/features/*.csv` (including `prophet_forecast.csv` and `model_comparison.csv`), which is what powers **View Demo** mode. This is unrelated to the live app's MySQL database — two entirely separate data paths.
 
-## Static Netlify Preview
+## User Manual
 
-The repo includes a lightweight static dashboard preview for Netlify:
+**Demo mode:** click **View Demo** on the landing page — no account needed, browse all six pages immediately.
 
-- `index.html`
-- `assets/site.css`
-- `assets/site.js`
-- `netlify.toml`
+**Real hospital use:**
+1. **Sign Up** with your hospital name, email, and a password (8+ characters).
+2. **Log In**.
+3. Go to **Submit Update** and enter your first department's numbers (beds, ICU, staffing, average wait time). Repeat this regularly (daily is enough) to build a real history.
+4. Check **Executive**, **Analytics**, and **Resources** for your live numbers.
+5. Once you have 14+ days of submissions, **Forecasting** unlocks a real bed-occupancy projection for your hospital specifically.
+6. **AI Insights** gives a plain-English summary and recommendation, computed from your own latest data.
 
-This preview reads CSV summaries from `analytics/output/` and displays a fast portfolio-friendly dashboard. It is not a replacement for the Streamlit app; it is a static public preview.
+## The Offline Data/ML Pipeline
 
-For Netlify:
+Separate from the live app, `etl/` + `ml_models/` produce the realistic 6-year synthetic dataset that powers **View Demo** mode, and demonstrate a genuine model-comparison workflow:
 
-- Build command: leave empty
-- Publish directory: `.`
+```text
+generate_data.py (Faker, seeded) -> clean_data.py -> feature_engineering.py
+    -> forecast_dataset.csv -> {prophet_model.py, xgboost_model.py, naive, moving avg}
+    -> model_comparison.py backtests all four on the same held-out window -> model_comparison.csv
+```
 
-## Data and Analytics Outputs
+There's also a separate, optional MySQL **analytics** schema (`sql/schema/`) for Power BI reporting — set `LOAD_MYSQL=true` when running the pipeline to populate it. This is a different database/schema from the live app's `hospitals`/`department_snapshots` tables and serves a different purpose (BI export, not the live dashboard).
 
-Key generated and/or included outputs:
+## Known Limitations
 
-- `data/synthetic/`: generated raw hospital datasets
-- `data/clean/`: cleaned operational datasets
-- `data/features/appointments_features.csv`: main feature table
-- `data/features/forecast_dataset.csv`: forecasting input
-- `data/features/prophet_forecast.csv`: forecast output or local fallback
-- `analytics/output/`: CSV KPI summaries used by static preview and BI storytelling
+Being upfront about what "production" doesn't mean here:
 
-## Machine Learning Layer
+- **No email verification** on signup — anyone can create an account with any email address.
+- **No rate limiting or abuse protection** — not available on free-tier Streamlit Cloud infrastructure.
+- **Not HIPAA-compliant, and never appropriate for real patient-identifiable data.** This tracks aggregate operational counts (bed/staff numbers), not patient records — real compliance would require a legal/audit process far beyond code.
+- **Streamlit isn't architected for high-concurrency enterprise SaaS** the way a dedicated backend framework is — fine for a demo or a single hospital's internal use, not a claim of enterprise scale.
 
-The ML layer includes:
+## Resume Bullets
 
-- `ml_models/data_prep.py`: builds forecasting dataset
-- `ml_models/baseline_model.py`: naive and moving-average baselines
-- `ml_models/prophet_model.py`: time-series forecasting
-- `ml_models/xgboost_model.py`: feature-based demand modeling
-- `ml_models/anamoly_detector.py`: anomaly detection workflow
-- `ml_models/evaluation.py`: model quality metrics
-
-## AI Insights Layer
-
-The AI layer converts structured metrics into business-friendly recommendations:
-
-- `ai_insights/analytics_engine.py`: KPI metric preparation
-- `ai_insights/recommendation_engine.py`: rule-based recommendations
-- `ai_insights/openai_insights.py`: insight formatting layer
-- `dashboard/pages/6_AI.py`: Streamlit AI insights page
-
-The default project flow works without an OpenAI key. Environment variables are documented in `.env.example`.
-
-## Documentation
-
-- [Architecture](docs/Architecture.md)
-- [Database Design](docs/DatabaseDesign.md)
-- [Deployment Guide](docs/Deployment.md)
-- [Forecasting](docs/Forecasting.md)
-- [KPI Framework](docs/KPIFramework.md)
-- [SQL Analytics](docs/SQL_Analytics.md)
-- [AI Insights](docs/AIInsights.md)
-- [Case Study](docs/CaseStudy.md)
-- [Business Requirements](docs/BRD.md)
-
-## Business Value
-
-MedIntel demonstrates how hospital operations teams can use data systems to:
-
-- Identify wait-time bottlenecks.
-- Monitor department demand.
-- Balance doctor workload.
-- Track resource and bed utilization.
-- Forecast patient demand.
-- Generate operational recommendations from KPI data.
+```text
+Built MedIntel, a live multi-tenant hospital operations dashboard (Streamlit, MySQL, bcrypt auth) where hospitals submit real-time bed/ICU/staffing data and receive an executive overview, resource utilization tracking, statistical wait-time anomaly detection, Prophet-based demand forecasting, and AI-generated recommendations, backed by a genuine offline model-comparison pipeline (naive, moving average, XGBoost, Prophet) benchmarked with real MAE/RMSE/MAPE.
+```
 
 ## Status
 
-This is a portfolio-ready analytics engineering project with a runnable Streamlit dashboard, MySQL schema, static Netlify preview, demo screenshots, Power BI dashboard images, and documented setup paths.
+Live and deployed. Core live-app features (auth, data entry, all 6 dashboard pages in both demo and live mode, forecasting, AI insights) are built and verified with Streamlit's headless `AppTest` framework across all page/mode combinations. Demo video and fresh screenshots are the remaining documentation items.
