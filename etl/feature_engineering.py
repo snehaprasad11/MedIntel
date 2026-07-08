@@ -71,12 +71,8 @@ def main():
     )
     forecast_dataset.to_csv("data/features/forecast_dataset.csv", index=False)
 
-    fallback_forecast = forecast_dataset.rename(
-        columns={"date": "ds", "patient_arrivals": "yhat"}
-    )
-    fallback_forecast.to_csv("data/features/prophet_forecast.csv", index=False)
-
     print("Feature engineering completed successfully")
+    print("Note: data/features/prophet_forecast.csv is produced separately by ml_models/prophet_model.py")
 
 
 if __name__ == "__main__":

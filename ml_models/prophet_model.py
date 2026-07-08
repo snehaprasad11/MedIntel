@@ -1,38 +1,30 @@
 import pandas as pd
 from pathlib import Path
-from prophet import Prophet
 
-# =============================
-# LOAD DATA
-# =============================
-BASE_DIR = Path(__file__).resolve().parent.parent
-file_path = BASE_DIR / "data" / "features" / "forecast_dataset.csv"
 
-df = pd.read_csv(file_path)
+def main():
+    from prophet import Prophet
 
-# =============================
-# PREP DATA FOR PROPHET
-# =============================
-prophet_df = df[["date", "patient_arrivals"]].copy()
-prophet_df.columns = ["ds", "y"]
+    base_dir = Path(__file__).resolve().parent.parent
+    input_path = base_dir / "data" / "features" / "forecast_dataset.csv"
+    output_path = base_dir / "data" / "features" / "prophet_forecast.csv"
 
-# =============================
-# MODEL
-# =============================
-model = Prophet()
-model.fit(prophet_df)
+    df = pd.read_csv(input_path)
 
-# =============================
-# FORECAST
-# =============================
-future = model.make_future_dataframe(periods=30)
-forecast = model.predict(future)
+    prophet_df = df[["date", "patient_arrivals"]].copy()
+    prophet_df.columns = ["ds", "y"]
 
-# =============================
-# SAVE OUTPUT
-# =============================
-output_path = BASE_DIR / "data" / "features" / "prophet_forecast.csv"
-forecast.to_csv(output_path, index=False)
+    model = Prophet()
+    model.fit(prophet_df)
 
-print("Prophet model completed")
-print("Saved at:", output_path)
+    future = model.make_future_dataframe(periods=30)
+    forecast = model.predict(future)
+
+    forecast.to_csv(output_path, index=False)
+
+    print("Prophet model completed")
+    print("Saved at:", output_path)
+
+
+if __name__ == "__main__":
+    main()
