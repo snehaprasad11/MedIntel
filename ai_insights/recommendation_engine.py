@@ -1,35 +1,36 @@
 def generate_recommendation(metrics):
     """
-    Generates operational recommendations
-    based on KPI changes.
+    Generates an operational recommendation from the current
+    snapshot metrics (average wait time, bed occupancy, ICU
+    occupancy) produced by analytics_engine.calculate_metrics().
     """
 
-    wait_time = metrics.get("wait_time_change", 0)
-    arrivals = metrics.get("patient_arrivals_change", 0)
-    doctors = metrics.get("doctor_availability_change", 0)
-    lab = metrics.get("lab_delay_change", 0)
+    avg_wait_time = metrics.get("avg_wait_time", 0)
+    avg_bed_occupancy = metrics.get("avg_bed_occupancy", 0)
+    avg_icu_occupancy = metrics.get("avg_icu_occupancy", 0)
 
-    if wait_time > 10 and doctors < -5:
+    if avg_icu_occupancy > 80:
         recommendation = (
-            "Increase physician coverage during peak hours "
-            "to reduce patient backlog."
+            f"ICU occupancy is averaging {avg_icu_occupancy}% — "
+            "review ICU capacity and step-down transfer options before it becomes a bottleneck."
         )
 
-    elif arrivals > 10:
+    elif avg_bed_occupancy > 85:
         recommendation = (
-            "Scale up front desk and triage capacity "
-            "to handle growing patient demand."
+            f"General bed occupancy is averaging {avg_bed_occupancy}% — "
+            "review discharge planning and consider scaling ward capacity."
         )
 
-    elif lab >= 5:
+    elif avg_wait_time > 45:
         recommendation = (
-            "Review laboratory workflow and staffing "
-            "to reduce turnaround times."
+            f"Average patient wait time is {avg_wait_time} minutes — "
+            "increase physician coverage during peak hours and expand triage staffing to reduce backlog."
         )
 
     else:
         recommendation = (
-            "System operating within acceptable limits."
+            f"Average wait time ({avg_wait_time} min) and bed occupancy ({avg_bed_occupancy}%) "
+            "are both within acceptable limits — no immediate action needed."
         )
 
     return recommendation
@@ -38,10 +39,9 @@ def generate_recommendation(metrics):
 if __name__ == "__main__":
 
     sample_metrics = {
-        "wait_time_change": 18,
-        "patient_arrivals_change": 15,
-        "doctor_availability_change": -10,
-        "lab_delay_change": 5
+        "avg_wait_time": 62.4,
+        "avg_bed_occupancy": 77.1,
+        "avg_icu_occupancy": 60.0,
     }
 
     result = generate_recommendation(sample_metrics)
