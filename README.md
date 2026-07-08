@@ -28,11 +28,25 @@ MedIntel is a hospital operations dashboard: departments submit live bed, ICU, a
 
 ## Demo Video
 
-*(to be added — a short screen recording walking through: View Demo → Sign Up → Log In → Submit Update → Executive/Resources/Forecasting/AI pages showing the just-submitted data)*
+![MedIntel demo](docs/demo/medintel-demo.gif)
 
 ## Screenshots
 
-*(to be added — see the checklist in the project notes for exactly which views to capture)*
+| Landing page | Submit Update (live) |
+| --- | --- |
+| ![Landing page with View Demo / Log In / Sign Up options, doodle theme](docs/demo/landing.png) | ![Submit Update form for live hospital data entry](docs/demo/submit-update.png) |
+
+| Executive Overview | Analytics |
+| --- | --- |
+| ![Executive Overview page](docs/demo/executive.png) | ![Analytics page with department/wait-time charts](docs/demo/analytics.png) |
+
+| Resources | Forecasting (demo mode, with model comparison) |
+| --- | --- |
+| ![Resource Utilization page](docs/demo/resources.png) | ![Forecasting page showing Prophet forecast and model comparison table](docs/demo/forecasting.png) |
+
+| AI Insights |
+| --- |
+| ![AI Insights page with executive summary and recommendation](docs/demo/ai-insights.png) |
 
 ## Why This Exists
 
