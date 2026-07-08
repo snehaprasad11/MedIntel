@@ -5,20 +5,31 @@ def get_theme(mode="light"):
 
     if mode == "dark":
         return {
-            "bg": "#1a1815",
-            "text": "#e8e3d8",
-            "card": "#242019",
-            "sidebar": "#151310",
-            "accent": "#c9302c"
+            "bg": "#1f2b29",
+            "text": "#eafaf6",
+            "card": "#2a3a37",
+            "sidebar": "#18211f",
+            "accent": "#7ec8e3"
         }
 
     return {
-        "bg": "#f4f0e6",
+        "bg": "#cfe9e5",
         "text": "#1a1a1a",
-        "card": "#faf8f2",
-        "sidebar": "#ede8d9",
-        "accent": "#8b0000"
+        "card": "#ffffff",
+        "sidebar": "#bfe0da",
+        "accent": "#7ec8e3"
     }
+
+
+DOODLE_SVG = """
+<svg style="position: fixed; top: 70px; right: 40px; width: 90px; opacity: 0.5; z-index: 0; pointer-events: none;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 70 L70 20 M55 15 L70 20 L65 35" stroke="black" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 70 L20 55 M10 70 L28 66" stroke="black" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>
+<svg style="position: fixed; bottom: 40px; left: 30px; width: 70px; opacity: 0.5; z-index: 0; pointer-events: none;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 50 Q 30 20, 50 50 T 90 50" stroke="black" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>
+"""
 
 
 def apply_theme(mode="light"):
@@ -33,29 +44,24 @@ def apply_theme(mode="light"):
         f"""
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
         <style>
-        @keyframes paperShift {{
-            0%   {{ background-position: 0% 0%; }}
-            50%  {{ background-position: 100% 100%; }}
-            100% {{ background-position: 0% 0%; }}
-        }}
         .stApp {{
-            background: linear-gradient(120deg, {theme['bg']} 0%, {theme['card']} 40%, {theme['bg']} 70%, {theme['card']} 100%);
-            background-size: 400% 400%;
-            animation: paperShift 25s ease infinite;
+            background-color: {theme['bg']};
+            background-image: radial-gradient(circle, rgba(0,0,0,0.12) 1.5px, transparent 1.5px);
+            background-size: 22px 22px;
         }}
         .stApp, .stApp p, .stApp li, .stApp label, .stApp span, .stApp div {{
-            font-family: 'Lora', Georgia, serif;
+            font-family: 'Baloo 2', 'Comic Sans MS', sans-serif;
             color: {theme['text']};
         }}
         [data-testid="stSidebar"] {{
             background-color: {theme['sidebar']};
-            border-right: 3px double {theme['text']};
+            border-right: 3px solid {theme['text']};
         }}
         [data-testid="stSidebar"] * {{
             color: {theme['text']};
-            font-family: 'Lora', Georgia, serif;
+            font-family: 'Baloo 2', 'Comic Sans MS', sans-serif;
         }}
         .block-container {{
             padding-top: 2rem;
@@ -63,46 +69,32 @@ def apply_theme(mode="light"):
             padding-left: 3rem;
             padding-right: 3rem;
             max-width: 1200px;
+            position: relative;
+            z-index: 1;
         }}
         h1, h2, h3 {{
-            font-family: 'Playfair Display', Georgia, serif !important;
+            font-family: 'Baloo 2', 'Comic Sans MS', sans-serif !important;
+            font-weight: 800;
             color: {theme['text']};
         }}
         h1 {{
-            font-weight: 900;
             text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            border-top: 4px double {theme['text']};
-            border-bottom: 4px double {theme['text']};
-            padding: 0.6rem 0;
-            margin-bottom: 0.5rem !important;
-        }}
-        h2, h3 {{
-            font-weight: 700;
-            border-bottom: 1px solid {theme['text']};
-            padding-bottom: 0.2rem;
-        }}
-        [data-testid="stCaptionContainer"] {{
-            font-style: italic;
-            text-align: center;
+            font-size: 3rem !important;
         }}
         [data-testid="stMetric"] {{
             background-color: {theme['card']};
-            border: 1px solid {theme['text']};
-            border-radius: 0;
+            border: 3px solid {theme['text']};
+            border-radius: 20px;
             padding: 1.2rem 1rem;
-            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.25);
         }}
         [data-testid="stMetricLabel"] {{
-            font-family: 'Playfair Display', Georgia, serif;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-weight: 700;
             color: {theme['text']};
         }}
         [data-testid="stMetricValue"] {{
-            font-family: 'Playfair Display', Georgia, serif;
             color: {theme['accent']};
+            font-weight: 800;
         }}
         div[data-testid="column"] {{
             padding: 0 0.6rem;
@@ -110,21 +102,36 @@ def apply_theme(mode="light"):
         hr {{
             margin: 2rem 0;
             border: none;
-            border-top: 3px double {theme['text']};
+            border-top: 3px dashed {theme['text']};
         }}
         .stButton button, .stFormSubmitButton button {{
-            font-family: 'Playfair Display', Georgia, serif;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-radius: 0;
-            border: 2px solid {theme['text']};
-            background-color: {theme['accent']};
-            color: {theme['card']};
+            font-family: 'Baloo 2', 'Comic Sans MS', sans-serif;
+            font-weight: 700;
+            border-radius: 50px !important;
+            border: 3px solid {theme['text']} !important;
+            background-color: #ffd93d !important;
+            color: {theme['text']} !important;
+            box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
+        }}
+        .stButton button:hover, .stFormSubmitButton button:hover {{
+            background-color: #b5e550 !important;
+            transform: translateY(-2px);
         }}
         [data-testid="stDataFrame"], [data-testid="stTable"] {{
-            border: 1px solid {theme['text']};
+            border: 3px solid {theme['text']};
+            border-radius: 14px;
+            overflow: hidden;
+        }}
+        [data-testid="stAlert"] {{
+            border: 3px solid {theme['text']};
+            border-radius: 16px;
+        }}
+        input, textarea {{
+            border-radius: 12px !important;
+            border: 2px solid {theme['text']} !important;
         }}
         </style>
+        {DOODLE_SVG}
         """,
         unsafe_allow_html=True,
     )
